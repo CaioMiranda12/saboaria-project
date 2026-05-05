@@ -1,4 +1,5 @@
 import type { Produto } from "../data/produtos"
+import { formatarMoeda } from "../utils/formatarMoeda"
 
 const corPorTipo: Record<Produto['tipo'], string> = {
   barra: 'from-[#7aab7a] to-[#4a7c59]',
@@ -7,22 +8,49 @@ const corPorTipo: Record<Produto['tipo'], string> = {
   po: 'from-[#6b8a4a] to-[#3d5a2a]',
 }
 
-type Props = { produto: Produto }
+type Props = {
+  produto: Produto
+  onVerDetalhes?: () => void
+}
 
-const CardProduto = ({ produto }: Props) => {
+const CardProduto = ({ produto, onVerDetalhes }: Props) => {
   return (
-    <div className="bg-white rounded-2xl overflow-hidden border border-[#4a7c59]/10 hover:-translate-y-1 hover:shadow-lg hover:border-[#4a7c59] transition-all duration-200 cursor-pointer">
+    <div className="bg-white rounded-2xl overflow-hidden border border-[#4a7c59]/10 hover:-translate-y-1 hover:shadow-lg hover:border-[#4a7c59] transition-all duration-200">
       <div className={`h-40 bg-gradient-to-br ${corPorTipo[produto.tipo]} flex items-center justify-center`}>
         <span className="text-white/70 text-xs tracking-widest uppercase">{produto.nome}</span>
       </div>
       <div className="p-5">
-        <h3 className="text-sm font-medium text-[#2d4f38] mb-1">{produto.nome}</h3>
+        {produto.tipos && produto.tipos.length > 0 && (
+          <div className="flex gap-1.5 flex-wrap mb-3">
+            {produto.tipos.map((t) => (
+              <span key={t} className="text-[10px] font-medium uppercase tracking-wider bg-[#e8f0e9] text-[#2d4f38] px-2.5 py-1 rounded-full">
+                {t}
+              </span>
+            ))}
+          </div>
+        )}
+        <h3 className="text-sm font-medium text-[#2d4f38] mb-0.5">{produto.nome}</h3>
+        {produto.nomeItalico && (
+          <p className="text-xs italic text-[#5a6b5e] font-light mb-2">{produto.nomeItalico}</p>
+        )}
         <p className="text-xs text-[#5a6b5e] leading-relaxed font-light mb-4">{produto.descricao}</p>
         <div className="flex justify-between items-center">
-          <span className="font-serif text-lg font-bold text-[#4a7c59]">{produto.preco}</span>
-          <span className="text-xs font-medium bg-[#e8f0e9] text-[#2d4f38] px-3 py-1 rounded-full">
-            {produto.peso}
-          </span>
+          <span className="font-serif text-lg font-bold text-[#4a7c59]">{formatarMoeda(produto.preco)}</span>
+          <div className="flex items-center gap-2">
+            {produto.peso && (
+              <span className="text-xs font-medium bg-[#e8f0e9] text-[#2d4f38] px-3 py-1 rounded-full">
+                {produto.peso}
+              </span>
+            )}
+            {onVerDetalhes && (
+              <button
+                onClick={onVerDetalhes}
+                className="text-xs font-medium text-[#4a7c59] bg-[#e8f0e9] px-3 py-1 rounded-full hover:bg-[#4a7c59] hover:text-white transition-colors"
+              >
+                Ver detalhes
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </div>
