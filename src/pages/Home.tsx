@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import Navbar from '../components/Navbar'
 import CardProduto from '../components/CardProduto'
 import { listaDeProdutos } from '../data/produtos'
 import { historiaDaMarca, contatosDaMarca } from '../data/marca'
@@ -20,8 +19,6 @@ const etapasDoProcesso = [
 const Home = () => {
   return (
     <div className="bg-[#f7f3ec] text-[#1a2e1f]">
-      <Navbar />
-
       {/* Hero */}
       <section className="min-h-screen grid grid-cols-1 md:grid-cols-2 pt-20">
         <div className="flex flex-col justify-center px-6 md:px-20 py-16 md:py-20">
@@ -177,14 +174,6 @@ const Home = () => {
           </a>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="px-6 md:px-20 py-6 flex flex-col sm:flex-row justify-between items-center gap-2 border-t border-[#4a7c59]/15 bg-[#f7f3ec]">
-        <span className="font-serif text-base font-bold text-[#2d4f38]">
-          SABOARIA <em className="font-normal not-italic text-[#4a7c59]">ecológica</em>
-        </span>
-        <span className="text-xs text-[#5a6b5e] font-light">© 2025 Saboaria Ecológica · Iparana, Ceará</span>
-      </footer>
     </div>
   )
 }
