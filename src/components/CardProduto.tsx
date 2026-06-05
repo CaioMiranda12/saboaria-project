@@ -1,11 +1,11 @@
 import type { Produto } from "../data/produtos"
-import { formatarMoeda } from "../utils/formatarMoeda"
 
 const corPorTipo: Record<Produto['tipo'], string> = {
   barra: 'from-[#7aab7a] to-[#4a7c59]',
   pasta: 'from-[#c4994a] to-[#8c6830]',
   liquido: 'from-[#5a8a7a] to-[#2d5a4a]',
   po: 'from-[#6b8a4a] to-[#3d5a2a]',
+  sabonete: ""
 }
 
 type Props = {
@@ -15,9 +15,20 @@ type Props = {
 
 const CardProduto = ({ produto, onVerDetalhes }: Props) => {
   return (
-    <div className="bg-white rounded-2xl overflow-hidden border border-[#4a7c59]/10 hover:-translate-y-1 hover:shadow-lg hover:border-[#4a7c59] transition-all duration-200">
+    <div
+      className="bg-white rounded-2xl overflow-hidden border border-[#4a7c59]/10 hover:-translate-y-1 hover:shadow-lg hover:border-[#4a7c59] transition-all duration-200 cursor-pointer"
+      onClick={onVerDetalhes}
+    >
       <div className={`h-40 bg-gradient-to-br ${corPorTipo[produto.tipo]} flex items-center justify-center`}>
-        <span className="text-white/70 text-xs tracking-widest uppercase">{produto.nome}</span>
+        {produto.imagem ? (
+          <img
+            src={produto.imagem}
+            alt={`${produto.nomePrincipal} ${produto.nomeComplemento}`}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <span className="text-white/70 text-xs tracking-widest uppercase">{produto.nomePrincipal}</span>
+        )}
       </div>
       <div className="p-5">
         {produto.tipos && produto.tipos.length > 0 && (
@@ -29,13 +40,13 @@ const CardProduto = ({ produto, onVerDetalhes }: Props) => {
             ))}
           </div>
         )}
-        <h3 className="text-sm font-medium text-[#2d4f38] mb-0.5">{produto.nome}</h3>
-        {produto.nomeItalico && (
-          <p className="text-xs italic text-[#5a6b5e] font-light mb-2">{produto.nomeItalico}</p>
+        <h3 className="text-sm font-medium text-[#2d4f38] mb-0.5">{produto.nomePrincipal}</h3>
+        {produto.nomeComplemento && (
+          <p className="text-xs italic text-[#5a6b5e] font-light mb-2">{produto.nomeComplemento}</p>
         )}
         <p className="text-xs text-[#5a6b5e] leading-relaxed font-light mb-4">{produto.descricao}</p>
         <div className="flex justify-between items-center">
-          <span className="font-serif text-lg font-bold text-[#4a7c59]">{formatarMoeda(produto.preco)}</span>
+          {/* <span className="font-serif text-lg font-bold text-[#4a7c59]">{formatarMoeda(produto.preco)}</span> */}
           <div className="flex items-center gap-2">
             {produto.peso && (
               <span className="text-xs font-medium bg-[#e8f0e9] text-[#2d4f38] px-3 py-1 rounded-full">

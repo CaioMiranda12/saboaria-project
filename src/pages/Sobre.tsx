@@ -60,7 +60,7 @@ const Sobre = () => {
   return (
     <div className="bg-[#f7f3ec] text-[#1a2e1f]">
       {/* Hero */}
-      <section className="bg-[#2d4f38] pt-28 pb-16 md:pb-20 px-6 md:px-20 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center relative overflow-hidden">
+      <section className="bg-[#396824] pt-28 pb-16 md:pb-20 px-6 md:px-20 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center relative overflow-hidden">
         <div className="absolute top-[-80px] right-[-80px] w-96 h-96 rounded-full bg-white/[0.04]" />
         <div className="relative z-10">
           <span className="inline-flex items-center gap-2 bg-white/10 text-white/80 px-4 py-2 rounded-full text-xs font-medium uppercase tracking-widest mb-6 w-fit">
@@ -110,7 +110,7 @@ const Sobre = () => {
       <section className="grid grid-cols-1 md:grid-cols-2 border-t border-[#4a7c59]/10">
         <div className="px-6 md:px-20 py-16 md:py-20 bg-[#f7f3ec]">
           <p className="text-xs font-medium tracking-widest uppercase text-[#4a7c59] mb-3">Nossa trajetória</p>
-          <h2 className="font-serif text-3xl md:text-4xl text-[#2d4f38] leading-tight mb-6">
+          <h2 className="font-serif text-3xl md:text-4xl text-[#396824] leading-tight mb-6">
             Transformar resíduos em <em className="text-[#4a7c59]">soluções reais</em>
           </h2>
           <div className="flex flex-col gap-4 text-[#5a6b5e] text-sm leading-relaxed font-light">
@@ -138,7 +138,7 @@ const Sobre = () => {
       {/* Contribuições */}
       <section className="px-6 md:px-20 py-16 md:py-20 bg-white border-t border-[#4a7c59]/10">
         <p className="text-xs font-medium tracking-widest uppercase text-[#4a7c59] mb-3">Nosso impacto</p>
-        <h2 className="font-serif text-3xl md:text-4xl text-[#2d4f38] mb-10">
+        <h2 className="font-serif text-3xl md:text-4xl text-[#396824] mb-10">
           Contribuímos para um <em className="text-[#4a7c59]">futuro melhor</em>
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -150,7 +150,7 @@ const Sobre = () => {
               <div className="w-10 h-10 rounded-lg bg-[#e8f0e9] flex items-center justify-center mb-4">
                 <span className="w-2 h-2 rounded-full bg-[#4a7c59]" />
               </div>
-              <p className="text-sm font-medium text-[#2d4f38] mb-2">{item.titulo}</p>
+              <p className="text-sm font-medium text-[#396824] mb-2">{item.titulo}</p>
               <p className="text-xs text-[#5a6b5e] leading-relaxed font-light">{item.texto}</p>
             </div>
           ))}
@@ -158,7 +158,7 @@ const Sobre = () => {
       </section>
 
       {/* CTA */}
-      <section className="px-6 md:px-20 py-16 md:py-20 bg-[#2d4f38] flex flex-col items-center text-center">
+      <section className="px-6 md:px-20 py-16 md:py-20 bg-[#396824] flex flex-col items-center text-center">
         <h2 className="font-serif text-3xl md:text-4xl text-white mb-3">
           Conheça nossos <em className="text-white/50">produtos</em>
         </h2>
@@ -166,7 +166,7 @@ const Sobre = () => {
           Cada compra é um ato de consciência. Veja o que produzimos com responsabilidade e cuidado.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-          <Link to="/produtos" className="bg-white text-[#2d4f38] px-8 py-3 rounded-full text-sm font-medium hover:opacity-90 transition-opacity text-center">
+          <Link to="/produtos" className="bg-white text-[#396824] px-8 py-3 rounded-full text-sm font-medium hover:opacity-90 transition-opacity text-center">
             Ver produtos
           </Link>
           <a

@@ -1,169 +1,138 @@
-// export type Produto = {
-//   id: string
-//   nome: string
-//   descricao: string
-//   preco: string
-//   peso: string
-//   tipo: 'barra' | 'pasta' | 'liquido' | 'po'
-// }
 
-// export const listaDeProdutos: Produto[] = [
-//   {
-//     id: 'sabao-barra',
-//     nome: 'Sabão em Barra Multiuso',
-//     descricao: 'Limpeza geral com óleo reutilizado. Disponível em tradicional, leite de coco, folha de mamão e juá.',
-//     preco: 'R$ 5,00',
-//     peso: '250g',
-//     tipo: 'barra',
-//   },
-//   {
-//     id: 'pasta-brilho',
-//     nome: 'Pasta de Brilho',
-//     descricao: 'Remove gordura pesada de fogões, grelhas e inox. Devolve o brilho natural sem danificar.',
-//     preco: 'R$ 6,00',
-//     peso: '500g',
-//     tipo: 'pasta',
-//   },
-//   {
-//     id: 'sabao-liquido',
-//     nome: 'Sabão Líquido',
-//     descricao: 'Ideal para roupas, louças e superfícies. Feito com óleo reutilizado, biodegradável e eficaz.',
-//     preco: 'R$ 16,00',
-//     peso: '5L',
-//     tipo: 'liquido',
-//   },
-//   {
-//     id: 'sabao-po',
-//     nome: 'Sabão em Pó',
-//     descricao: 'Biodegradável para lavagem de roupas. Disponível nos tipos tradicional e coco.',
-//     preco: 'R$ 8,00',
-//     peso: '400g',
-//     tipo: 'po',
-//   },
-// ]
 
 export type Produto = {
   id: string
-  nome: string
-  nomeItalico: string
+  nomePrincipal: string
+  nomeComplemento: string
   descricao: string
   descricaoCompleta: string
-  preco: number
-  peso: string
-  tipo: 'barra' | 'pasta' | 'liquido' | 'po'
+  peso: string | null
+  tipo: 'barra' | 'pasta' | 'liquido' | 'po' | 'sabonete'
   ingredientes: string[]
   tipos: string[]
   modoDeUso: string
   badge: string
   destaque?: boolean
+  consultarFragrancias?: boolean
+  consultarTamanhos?: boolean
+  imagem?: string | null
 }
 
 export const listaDeProdutos: Produto[] = [
   {
-    id: 'sabao-barra-tradicional',
-    nome: 'Sabão em Barra',
-    nomeItalico: 'multiuso',
-    descricao: 'Limpeza geral eficaz feita com óleo reutilizado e ingredientes naturais.',
+    id: 'sabao-barra-multiuso',
+    nomePrincipal: 'Sabão em Barra',
+    nomeComplemento: 'multiuso',
+    descricao: 'Ideal para limpeza geral, feito com óleo reutilizado e ingredientes naturais.',
     descricaoCompleta:
-      'Ideal para limpeza geral de superfícies, roupas e utensílios domésticos. Feito com óleo de fritura reutilizado, limpa com eficiência sem agredir o meio ambiente. Disponível em quatro fragrâncias.',
-    preco: 5.0,
+      'Ideal para limpeza geral, o Sabão em Barra Multiuso é feito com óleo reutilizado e ingredientes naturais. Limpa com eficiência sem agredir o meio ambiente.',
     peso: '250g',
     tipo: 'barra',
-    ingredientes: ['Óleo vegetal saturado', 'Hidróxido de sódio', 'Água', 'Essência natural e/ou química'],
+    ingredientes: [
+      'Óleo vegetal saturado',
+      'Hidróxido de sódio',
+      'Água',
+      'Essência química e/ou natural',
+    ],
     tipos: ['Tradicional', 'Leite de coco', 'Folha de mamão', 'Juá'],
-    modoDeUso: 'Aplique diretamente na superfície ou em uma esponja úmida. Esfregue suavemente e enxágue.',
+    modoDeUso:
+      'Aplique diretamente na superfície ou em uma esponja úmida. Esfregue suavemente e enxágue.',
     badge: 'Biodegradável',
     destaque: true,
+    consultarFragrancias: true,
+    imagem: '/sabonete-em-barra.jpg'
   },
   {
-    id: 'pasta-brilho',
-    nome: 'Pasta de',
-    nomeItalico: 'brilho',
-    descricao: 'Remove gordura pesada e devolve o brilho natural de fogões, grelhas e inox.',
+    id: 'pasta-de-brilho',
+    nomePrincipal: 'Pasta de',
+    nomeComplemento: 'brilho',
+    descricao:
+      'Remove gordura pesada de fogões, grelhas e inox. Devolve o brilho natural sem danificar.',
     descricaoCompleta:
-      'Excelente para remover gordura pesada de fogões, grelhas, formas e assadeiras. Pode ser usada também em azulejos, pias e superfícies de inox. Retira manchas difíceis sem danificar.',
-    preco: 6.0,
+      'Excelente para remover gordura pesada de fogões, grelhas, formas e assadeiras, podendo ser usada também em azulejos, pias e superfícies de inox. Retira manchas e devolve o brilho natural sem danificar.',
     peso: '500g',
     tipo: 'pasta',
-    ingredientes: ['Óleo vegetal saturado', 'Hidróxido de sódio', 'Água', 'Essência natural e/ou química'],
+    ingredientes: [
+      'Óleo vegetal saturado',
+      'Hidróxido de sódio',
+      'Água',
+      'Essência química e/ou natural',
+    ],
     tipos: ['Tradicional'],
-    modoDeUso: 'Aplique uma pequena quantidade com esponja úmida. Esfregue suavemente e enxágue.',
+    modoDeUso:
+      'Aplique uma pequena quantidade da pasta sobre a superfície com uma esponja úmida. Esfregue suavemente e enxágue.',
     badge: 'Biodegradável',
+    destaque: false,
+    consultarTamanhos: true,
+    imagem: null,
   },
   {
     id: 'sabao-liquido',
-    nome: 'Sabão',
-    nomeItalico: 'líquido',
-    descricao: 'Para roupas, louças e superfícies. Biodegradável e feito com óleo reutilizado.',
+    nomePrincipal: 'Sabão',
+    nomeComplemento: 'líquido',
+    descricao:
+      'Para roupas, louças e superfícies. Biodegradável e feito com óleo reutilizado.',
     descricaoCompleta:
-      'Produto de limpeza ecológico, ideal para roupas, louças e superfícies diversas. Feito com óleo reutilizado, é biodegradável e eficaz. Disponível nas fragrâncias talco, limão e eucalipto.',
-    preco: 16.0,
+      'Produto de limpeza ecológico, ideal para roupas, louças e superfícies. Feito com óleo reutilizado, é biodegradável e eficaz.',
     peso: '5L',
     tipo: 'liquido',
     ingredientes: [
       'Óleo vegetal saturado',
       'Hidróxido de sódio',
       'Água',
-      'Essência natural e/ou química',
+      'Essência química e/ou natural',
       'Bicarbonato de sódio',
       'Álcool',
     ],
     tipos: ['Talco', 'Limão', 'Eucalipto'],
-    modoDeUso: 'Aplique diretamente sobre a superfície ou dilua em água. Enxágue após o uso.',
+    modoDeUso:
+      'Aplicar diretamente sobre a superfície ou diluir em água. Enxaguar após o uso.',
     badge: 'Biodegradável',
-    destaque: true,
+    destaque: false,
+    consultarFragrancias: true,
+    imagem: null,
   },
   {
-    id: 'sabao-po',
-    nome: 'Sabão',
-    nomeItalico: 'em pó',
-    descricao: 'Para lavagem de roupas à mão ou na máquina. Fórmula segura para o meio ambiente.',
+    id: 'sabao-em-po',
+    nomePrincipal: 'Sabão',
+    nomeComplemento: 'em pó',
+    descricao:
+      'Para lavagem de roupas à mão ou na máquina. Fórmula segura para o meio ambiente.',
     descricaoCompleta:
-      'Sabão em pó biodegradável ideal para lavagem de roupas e limpeza geral. Fórmula eficaz e segura para o meio ambiente, compatível com máquinas de lavar. Disponível nos tipos tradicional e coco.',
-    preco: 8.0,
+      'Sabão em pó biodegradável ideal para lavagem de roupas e limpeza geral, com fórmula eficaz e segura para o meio ambiente.',
     peso: '400g',
     tipo: 'po',
     ingredientes: [
       'Óleo vegetal saturado',
       'Hidróxido de sódio',
       'Água',
-      'Essência natural e/ou química',
+      'Essência química e/ou natural',
       'Bicarbonato de sódio',
     ],
     tipos: ['Tradicional', 'Coco'],
     modoDeUso:
-      'Dissolva 2 colheres em 5L de água para lavagem manual. Para máquina, use a dosagem recomendada pelo fabricante.',
+      'Dissolva 2 colheres de sopa em 5 litros de água para lavagem manual. Para máquina de lavar, utilize a dosagem conforme recomendação do fabricante.',
     badge: 'Biodegradável',
+    destaque: false,
+    consultarFragrancias: true,
+    imagem: null,
   },
   {
-    id: 'sabao-barra-coco',
-    nome: 'Sabão de',
-    nomeItalico: 'leite de coco',
-    descricao: 'Versão especial com leite de coco, ideal para peles sensíveis e uso no banheiro.',
+    id: 'sabonete-em-cachos',
+    nomePrincipal: 'Sabonete',
+    nomeComplemento: 'em cachos',
+    descricao:
+      'Sabonete artesanal à base de glicerina. Hidrata e mantém a umidade natural da pele.',
     descricaoCompleta:
-      'Variação do sabão em barra com leite de coco, que confere suavidade extra e aroma agradável. Indicado para uso no banheiro e em peles mais sensíveis, mantendo a eficácia da limpeza.',
-    preco: 6.0,
-    peso: '250g',
-    tipo: 'barra',
-    ingredientes: ['Óleo vegetal saturado', 'Hidróxido de sódio', 'Água', 'Leite de coco', 'Essência natural'],
-    tipos: ['Leite de coco'],
-    modoDeUso: 'Aplique diretamente na superfície ou em uma esponja úmida. Esfregue suavemente e enxágue.',
-    badge: 'Pele sensível',
-  },
-  {
-    id: 'sabao-barra-mamao',
-    nome: 'Sabão de',
-    nomeItalico: 'folha de mamão',
-    descricao: 'Com extrato de folha de mamão, potente na remoção de manchas difíceis em tecidos.',
-    descricaoCompleta:
-      'Sabão artesanal com extrato natural de folha de mamão, conhecido por suas propriedades enzimáticas que ajudam a remover manchas orgânicas de tecidos com mais eficiência.',
-    preco: 6.0,
-    peso: '250g',
-    tipo: 'barra',
-    ingredientes: ['Óleo vegetal saturado', 'Hidróxido de sódio', 'Água', 'Extrato de folha de mamão'],
-    tipos: ['Folha de mamão'],
-    modoDeUso: 'Aplique diretamente na mancha do tecido, esfregue levemente e enxágue com água.',
-    badge: 'Remove manchas',
+      'Sabonete artesanal à base de glicerina, ideal para uma limpeza suave e delicada, que hidrata e ajuda a manter a umidade natural da pele, deixando-a macia, perfumada e revitalizada. Com formato criativo e encantador, cada peça é feita manualmente com atenção aos detalhes, unindo beleza, cuidado e um toque especial que transforma o banho em uma experiência única, perfeita tanto para o uso diário quanto para presentear.',
+    peso: null,
+    tipo: 'sabonete',
+    ingredientes: ['Base glicerinada', 'Extrato de aveia'],
+    tipos: ['Artesanal decorativo'],
+    modoDeUso:
+      'Aplique sobre a pele úmida, massageando suavemente até formar espuma. Enxágue em seguida.',
+    badge: 'Biodegradável',
     destaque: true,
+    imagem: null,
   },
 ]

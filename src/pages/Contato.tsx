@@ -99,7 +99,7 @@ const Contato = () => {
   return (
     <div className="bg-[#f7f3ec] text-[#1a2e1f]">
       {/* Hero */}
-      <section className="bg-[#2d4f38] pt-24 md:pt-28 pb-16 md:pb-20 px-5 md:px-20 relative overflow-hidden">
+      <section className="bg-[#396824] pt-24 md:pt-28 pb-16 md:pb-20 px-5 md:px-20 relative overflow-hidden">
         <div className="absolute top-[-80px] right-[-80px] w-72 md:w-96 h-72 md:h-96 rounded-full bg-white/[0.04]" />
         <div className="relative z-10 max-w-xl">
           <span className="inline-flex items-center gap-2 bg-white/10 text-white/80 px-4 py-2 rounded-full text-xs font-medium uppercase tracking-widest mb-5 w-fit">
@@ -130,7 +130,7 @@ const Contato = () => {
             <div className="w-12 h-12 rounded-full bg-[#e8f0e9] flex items-center justify-center mb-3">
               {canal.icone}
             </div>
-            <p className="text-xs font-medium text-[#2d4f38] mb-1">{canal.nome}</p>
+            <p className="text-xs font-medium text-[#396824] mb-1">{canal.nome}</p>
             <p className="text-xs text-[#5a6b5e] font-light">{canal.valor}</p>
           </a>
         ))}
@@ -142,7 +142,7 @@ const Contato = () => {
         {/* Formulário */}
         <div className="px-5 md:px-16 py-14 md:py-20 bg-[#f7f3ec]">
           <p className="text-xs font-medium tracking-widest uppercase text-[#4a7c59] mb-2">Formulário</p>
-          <h2 className="font-serif text-3xl md:text-4xl text-[#2d4f38] mb-2 leading-tight">
+          <h2 className="font-serif text-3xl md:text-4xl text-[#396824] mb-2 leading-tight">
             Envie uma <em className="text-[#4a7c59]">mensagem</em>
           </h2>
           <p className="text-sm text-[#5a6b5e] font-light leading-relaxed mb-8">
@@ -152,7 +152,7 @@ const Contato = () => {
           <form onSubmit={handleSubmit(aoEnviarFormulario)} className="flex flex-col gap-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-medium text-[#2d4f38] mb-1.5">Nome completo</label>
+                <label className="block text-xs font-medium text-[#396824] mb-1.5">Nome completo</label>
                 <input
                   {...register('nomeCompleto')}
                   type="text"
@@ -164,7 +164,7 @@ const Contato = () => {
                 )}
               </div>
               <div>
-                <label className="block text-xs font-medium text-[#2d4f38] mb-1.5">E-mail</label>
+                <label className="block text-xs font-medium text-[#396824] mb-1.5">E-mail</label>
                 <input
                   {...register('email')}
                   type="email"
@@ -178,7 +178,7 @@ const Contato = () => {
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-[#2d4f38] mb-1.5">Telefone / WhatsApp</label>
+              <label className="block text-xs font-medium text-[#396824] mb-1.5">Telefone / WhatsApp</label>
               <input
                 {...register('telefone')}
                 type="tel"
@@ -191,7 +191,7 @@ const Contato = () => {
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-[#2d4f38] mb-1.5">Assunto</label>
+              <label className="block text-xs font-medium text-[#396824] mb-1.5">Assunto</label>
               <select {...register('assunto')} className={campoBaseClasse}>
                 <option value="">Selecione um assunto</option>
                 {opcoesDeAssunto.map((opcao) => (
@@ -204,7 +204,7 @@ const Contato = () => {
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-[#2d4f38] mb-1.5">Mensagem</label>
+              <label className="block text-xs font-medium text-[#396824] mb-1.5">Mensagem</label>
               <textarea
                 {...register('mensagem')}
                 placeholder="Escreva sua mensagem aqui..."
@@ -219,7 +219,7 @@ const Contato = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-[#4a7c59] text-white rounded-full py-3.5 text-sm font-medium hover:bg-[#2d4f38] transition-colors disabled:opacity-60 disabled:cursor-not-allowed mt-1"
+              className="w-full bg-[#4a7c59] text-white rounded-full py-3.5 text-sm font-medium hover:bg-[#396824] transition-colors disabled:opacity-60 disabled:cursor-not-allowed mt-1"
             >
               {isSubmitting ? 'Enviando...' : 'Enviar mensagem'}
             </button>
@@ -227,7 +227,7 @@ const Contato = () => {
         </div>
 
         {/* Info lateral */}
-        <div className="bg-[#2d4f38] px-5 md:px-14 py-14 md:py-20 flex flex-col gap-6">
+        <div className="bg-[#396824] px-5 md:px-14 py-14 md:py-20 flex flex-col gap-6">
           <div>
             <h3 className="font-serif text-2xl text-white mb-2">Canais de atendimento</h3>
             <p className="text-white/60 text-sm font-light leading-relaxed mb-5">

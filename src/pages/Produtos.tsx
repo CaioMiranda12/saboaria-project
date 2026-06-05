@@ -24,13 +24,13 @@ const Produtos = () => {
       : listaDeProdutos.filter((p) => p.tipo === filtroAtivo)
 
   const mensagemWhatsApp = (produto: Produto) =>
-    encodeURIComponent(`Olá! Tenho interesse no produto *${produto.nome}* (R$ ${produto.preco}). Pode me ajudar?`)
+    encodeURIComponent(`Olá! Tenho interesse no produto *${produto.nomePrincipal}*. Pode me ajudar?`)
 
   return (
     <div className="bg-[#f7f3ec] text-[#1a2e1f]">
 
       {/* Hero */}
-      <section className="bg-[#2d4f38] pt-28 pb-16 px-6 md:px-20 relative overflow-hidden">
+      <section className="bg-[#396824] pt-28 pb-16 px-6 md:px-20 relative overflow-hidden">
         <div className="absolute top-[-80px] right-[-80px] w-96 h-96 rounded-full bg-white/[0.04]" />
         <div className="relative z-10 max-w-xl">
           <span className="inline-flex items-center gap-2 bg-white/10 text-white/80 px-4 py-2 rounded-full text-xs font-medium uppercase tracking-widest mb-6 w-fit">
@@ -101,18 +101,18 @@ const Produtos = () => {
                   {produtoSelecionado.tipos?.map((tipo) => (
                     <span
                       key={tipo}
-                      className="bg-[#e8f0e9] text-[#2d4f38] text-[10px] font-medium px-3 py-1 rounded-full uppercase tracking-wider"
+                      className="bg-[#e8f0e9] text-[#396824] text-[10px] font-medium px-3 py-1 rounded-full uppercase tracking-wider"
                     >
                       {tipo}
                     </span>
                   ))}
                 </div>
-                <h2 className="font-serif text-2xl md:text-3xl text-[#2d4f38]">
-                  {produtoSelecionado.nome}
+                <h2 className="font-serif text-2xl md:text-3xl text-[#396824]">
+                  {produtoSelecionado.nomePrincipal}
                 </h2>
-                {produtoSelecionado.nomeItalico && (
+                {produtoSelecionado.nomeComplemento && (
                   <p className="text-sm text-[#5a6b5e] font-light italic mt-1">
-                    {produtoSelecionado.nomeItalico}
+                    {produtoSelecionado.nomeComplemento}
                   </p>
                 )}
               </div>
@@ -148,9 +148,9 @@ const Produtos = () => {
 
             {/* Preço e ações */}
             <div className="flex justify-between items-center mb-5">
-              <span className="font-serif text-3xl font-bold text-[#4a7c59]">
+              {/* <span className="font-serif text-3xl font-bold text-[#4a7c59]">
                 R$ {produtoSelecionado.preco}
-              </span>
+              </span> */}
               {produtoSelecionado.peso && (
                 <span className="text-xs text-[#5a6b5e] font-light">{produtoSelecionado.peso}</span>
               )}
@@ -161,7 +161,7 @@ const Produtos = () => {
                 href={`https://wa.me/${contatosDaMarca.whatsapp}?text=${mensagemWhatsApp(produtoSelecionado)}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex-1 bg-[#4a7c59] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#2d4f38] transition-colors text-center"
+                className="flex-1 bg-[#4a7c59] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#396824] transition-colors text-center"
               >
                 Pedir pelo WhatsApp
               </a>

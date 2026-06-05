@@ -4,3 +4,7 @@
   --font-serif: "Playfair Display", serif;
   --font-sans: "DM Sans", sans-serif;
 }
+
+button {
+  cursor: pointer;
+}
