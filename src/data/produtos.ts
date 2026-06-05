@@ -8,7 +8,7 @@ export type Produto = {
   descricaoCompleta: string
   peso: string | null
   tipo: 'barra' | 'pasta' | 'liquido' | 'po' | 'sabonete'
-  ingredientes: string[]
+  ingredientes?: string[]
   tipos: string[]
   modoDeUso: string
   badge: string
@@ -22,7 +22,7 @@ export const listaDeProdutos: Produto[] = [
   {
     id: 'sabao-barra-multiuso',
     nomePrincipal: 'Sabão em Barra',
-    nomeComplemento: 'multiuso',
+    nomeComplemento: 'Barra',
     descricao: 'Ideal para limpeza geral, feito com óleo reutilizado e ingredientes naturais.',
     descricaoCompleta:
       'Ideal para limpeza geral, o Sabão em Barra Multiuso é feito com óleo reutilizado e ingredientes naturais. Limpa com eficiência sem agredir o meio ambiente.',
@@ -44,13 +44,13 @@ export const listaDeProdutos: Produto[] = [
   },
   {
     id: 'pasta-de-brilho',
-    nomePrincipal: 'Pasta de',
-    nomeComplemento: 'brilho',
+    nomePrincipal: 'Pasta de Brilho',
+    nomeComplemento: 'Pasta',
     descricao:
       'Remove gordura pesada de fogões, grelhas e inox. Devolve o brilho natural sem danificar.',
     descricaoCompleta:
       'Excelente para remover gordura pesada de fogões, grelhas, formas e assadeiras, podendo ser usada também em azulejos, pias e superfícies de inox. Retira manchas e devolve o brilho natural sem danificar.',
-    peso: '500g',
+    peso: '250g',
     tipo: 'pasta',
     ingredientes: [
       'Óleo vegetal saturado',
@@ -64,12 +64,12 @@ export const listaDeProdutos: Produto[] = [
     badge: 'Biodegradável',
     destaque: false,
     consultarTamanhos: true,
-    imagem: null,
+    imagem: '/pasta-de-brilho.jpg',
   },
   {
     id: 'sabao-liquido',
-    nomePrincipal: 'Sabão',
-    nomeComplemento: 'líquido',
+    nomePrincipal: 'Sabão Líquido',
+    nomeComplemento: 'Líquido',
     descricao:
       'Para roupas, louças e superfícies. Biodegradável e feito com óleo reutilizado.',
     descricaoCompleta:
@@ -90,12 +90,80 @@ export const listaDeProdutos: Produto[] = [
     badge: 'Biodegradável',
     destaque: false,
     consultarFragrancias: true,
-    imagem: null,
+    imagem: '/sabao-liquido.jpg',
+  },
+  {
+    id: 'detergente',
+    nomePrincipal: 'Detergente',
+    nomeComplemento: 'Líquido',
+    descricao:
+      'Detergente ecológico para limpeza de superfícies.',
+    descricaoCompleta:
+      'Detergente ecológico para limpeza de superfícies, feito com ingredientes naturais e biodegradáveis. Ideal para uso em ambientes domésticos e comerciais.',
+    peso: '5L',
+    tipo: 'liquido',
+    tipos: [''],
+    modoDeUso:
+      '',
+    badge: '',
+    destaque: true,
+    imagem: '/detergente.jpg',
+  },
+  {
+    id: 'agua-sanitaria',
+    nomePrincipal: 'Água Sanitária',
+    nomeComplemento: 'Líquido',
+    descricao:
+      'Água sanitária ecológica para limpeza de superfícies.',
+    descricaoCompleta:
+      'Água sanitária ecológica para limpeza de superfícies, feito com ingredientes naturais e biodegradáveis. Ideal para uso em ambientes domésticos e comerciais.',
+    peso: '5L',
+    tipo: 'liquido',
+    tipos: [''],
+    modoDeUso:
+      '',
+    badge: '',
+    destaque: true,
+    imagem: '/agua-sanitaria.jpg',
+  },
+  {
+    id: 'amaciante',
+    nomePrincipal: 'Amaciante',
+    nomeComplemento: 'Líquido',
+    descricao:
+      'Amaciante ecológico para lavagem de roupas.',
+    descricaoCompleta:
+      'Amaciante ecológico para lavagem de roupas, feito com ingredientes naturais e biodegradáveis. Ideal para uso em ambientes domésticos e comerciais.',
+    peso: '5L',
+    tipo: 'liquido',
+    tipos: [''],
+    modoDeUso:
+      '',
+    badge: '',
+    destaque: true,
+    imagem: '/amaciante.jpg',
+  },
+  {
+    id: 'desinfetante',
+    nomePrincipal: 'Desinfetante',
+    nomeComplemento: 'Líquido',
+    descricao:
+      'Desinfetante ecológico para limpeza de superfícies.',
+    descricaoCompleta:
+      'Desinfetante ecológico para limpeza de superfícies, feito com ingredientes naturais e biodegradáveis. Ideal para uso em ambientes domésticos e comerciais.',
+    peso: '5L',
+    tipo: 'liquido',
+    tipos: [''],
+    modoDeUso:
+      '',
+    badge: '',
+    destaque: true,
+    imagem: '/desinfetante.jpg',
   },
   {
     id: 'sabao-em-po',
-    nomePrincipal: 'Sabão',
-    nomeComplemento: 'em pó',
+    nomePrincipal: 'Sabão em Pó',
+    nomeComplemento: 'Pó',
     descricao:
       'Para lavagem de roupas à mão ou na máquina. Fórmula segura para o meio ambiente.',
     descricaoCompleta:
@@ -119,8 +187,8 @@ export const listaDeProdutos: Produto[] = [
   },
   {
     id: 'sabonete-em-cachos',
-    nomePrincipal: 'Sabonete',
-    nomeComplemento: 'em cachos',
+    nomePrincipal: 'Sabonete em Cachos',
+    nomeComplemento: 'Cachos',
     descricao:
       'Sabonete artesanal à base de glicerina. Hidrata e mantém a umidade natural da pele.',
     descricaoCompleta:
@@ -135,4 +203,5 @@ export const listaDeProdutos: Produto[] = [
     destaque: true,
     imagem: null,
   },
+
 ]

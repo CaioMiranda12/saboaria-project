@@ -7,6 +7,7 @@ const links = [
   ['/sobre', 'Sobre'],
   ['/produtos', 'Produtos'],
   ['/processo', 'Processo'],
+  ['/equipe', 'Equipe'],
   ['/contato', 'Contato'],
 ]
 

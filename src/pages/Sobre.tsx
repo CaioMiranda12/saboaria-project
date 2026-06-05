@@ -81,15 +81,6 @@ const Sobre = () => {
               Um negócio social que nasceu da necessidade de transformar óleo saturado de frituras em produtos de limpeza ecológicos e acessíveis.
             </p>
           </div>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-[#4a7c59] border-2 border-white/20 flex items-center justify-center font-serif font-bold text-white shrink-0">
-              LN
-            </div>
-            <div>
-              <p className="text-sm font-medium text-white">{historiaDaMarca.ceo}</p>
-              <p className="text-xs text-white/50 font-light">CEO e fundador</p>
-            </div>
-          </div>
         </div>
       </section>
 

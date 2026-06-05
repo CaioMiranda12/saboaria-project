@@ -30,11 +30,11 @@ const Produtos = () => {
     <div className="bg-[#f7f3ec] text-[#1a2e1f]">
 
       {/* Hero */}
-      <section className="bg-[#396824] pt-28 pb-16 px-6 md:px-20 relative overflow-hidden">
+      <section className="bg-[#013e72] pt-28 pb-16 px-6 md:px-20 relative overflow-hidden">
         <div className="absolute top-[-80px] right-[-80px] w-96 h-96 rounded-full bg-white/[0.04]" />
         <div className="relative z-10 max-w-xl">
           <span className="inline-flex items-center gap-2 bg-white/10 text-white/80 px-4 py-2 rounded-full text-xs font-medium uppercase tracking-widest mb-6 w-fit">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#4a7c59]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#013e72]" />
             Produtos artesanais
           </span>
           <h1 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-5">
@@ -47,14 +47,14 @@ const Produtos = () => {
       </section>
 
       {/* Filtros */}
-      <div className="sticky top-16 z-40 bg-white border-b border-[#4a7c59]/10 px-6 md:px-20 py-4 flex gap-2 flex-wrap">
+      <div className="sticky top-16 z-40 bg-white border-b border-[#013e72]/10 px-6 md:px-20 py-4 flex gap-2 flex-wrap">
         {filtros.map(({ valor, label }) => (
           <button
             key={valor}
             onClick={() => setFiltroAtivo(valor)}
             className={`px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all ${filtroAtivo === valor
-              ? 'bg-[#4a7c59] text-white'
-              : 'border border-[#4a7c59]/20 text-[#5a6b5e] hover:border-[#4a7c59] hover:text-[#4a7c59]'
+              ? 'bg-[#013e72] text-white'
+              : 'border border-[#013e72]/20 text-[#5a6b5e] hover:border-[#013e72] hover:text-[#013e72]'
               }`}
           >
             {label}
@@ -87,7 +87,7 @@ const Produtos = () => {
       {/* Modal */}
       {produtoSelecionado && (
         <div
-          className="fixed inset-0 z-50 bg-[#2d4f38]/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-6"
+          className="fixed inset-0 z-50 bg-[#013e72]/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-6"
           onClick={() => setProdutoSelecionado(null)}
         >
           <div
@@ -101,13 +101,13 @@ const Produtos = () => {
                   {produtoSelecionado.tipos?.map((tipo) => (
                     <span
                       key={tipo}
-                      className="bg-[#e8f0e9] text-[#396824] text-[10px] font-medium px-3 py-1 rounded-full uppercase tracking-wider"
+                      className="bg-[#e8f0e9] text-[#013e72] text-[10px] font-medium px-3 py-1 rounded-full uppercase tracking-wider"
                     >
                       {tipo}
                     </span>
                   ))}
                 </div>
-                <h2 className="font-serif text-2xl md:text-3xl text-[#396824]">
+                <h2 className="font-serif text-2xl md:text-3xl text-[#013e72]">
                   {produtoSelecionado.nomePrincipal}
                 </h2>
                 {produtoSelecionado.nomeComplemento && (
@@ -118,7 +118,7 @@ const Produtos = () => {
               </div>
               <button
                 onClick={() => setProdutoSelecionado(null)}
-                className="w-9 h-9 rounded-full bg-white border border-[#4a7c59]/15 flex items-center justify-center text-[#5a6b5e] hover:border-[#4a7c59] transition-colors shrink-0 ml-4"
+                className="w-9 h-9 rounded-full bg-white border border-[#013e72]/15 flex items-center justify-center text-[#5a6b5e] hover:border-[#013e72] transition-colors shrink-0 ml-4"
               >
                 <X size={16} />
               </button>
@@ -127,20 +127,20 @@ const Produtos = () => {
             {/* Blocos de info */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
               {produtoSelecionado.ingredientes && (
-                <div className="bg-white rounded-2xl p-4 border border-[#4a7c59]/10">
-                  <p className="text-[10px] font-medium uppercase tracking-widest text-[#4a7c59] mb-2">Ingredientes</p>
+                <div className="bg-white rounded-2xl p-4 border border-[#013e72]/10">
+                  <p className="text-[10px] font-medium uppercase tracking-widest text-[#013e72] mb-2">Ingredientes</p>
                   <p className="text-xs text-[#5a6b5e] font-light leading-relaxed">{produtoSelecionado.ingredientes}</p>
                 </div>
               )}
               {produtoSelecionado.modoDeUso && (
-                <div className="bg-white rounded-2xl p-4 border border-[#4a7c59]/10">
-                  <p className="text-[10px] font-medium uppercase tracking-widest text-[#4a7c59] mb-2">Modo de uso</p>
+                <div className="bg-white rounded-2xl p-4 border border-[#013e72]/10">
+                  <p className="text-[10px] font-medium uppercase tracking-widest text-[#013e72] mb-2">Modo de uso</p>
                   <p className="text-xs text-[#5a6b5e] font-light leading-relaxed">{produtoSelecionado.modoDeUso}</p>
                 </div>
               )}
               {produtoSelecionado.descricaoCompleta && (
-                <div className="bg-white rounded-2xl p-4 border border-[#4a7c59]/10 sm:col-span-2">
-                  <p className="text-[10px] font-medium uppercase tracking-widest text-[#4a7c59] mb-2">Descrição completa</p>
+                <div className="bg-white rounded-2xl p-4 border border-[#013e72]/10 sm:col-span-2">
+                  <p className="text-[10px] font-medium uppercase tracking-widest text-[#013e72] mb-2">Descrição completa</p>
                   <p className="text-xs text-[#5a6b5e] font-light leading-relaxed">{produtoSelecionado.descricaoCompleta}</p>
                 </div>
               )}
@@ -148,7 +148,7 @@ const Produtos = () => {
 
             {/* Preço e ações */}
             <div className="flex justify-between items-center mb-5">
-              {/* <span className="font-serif text-3xl font-bold text-[#4a7c59]">
+              {/* <span className="font-serif text-3xl font-bold text-[#013e72]">
                 R$ {produtoSelecionado.preco}
               </span> */}
               {produtoSelecionado.peso && (
@@ -161,13 +161,13 @@ const Produtos = () => {
                 href={`https://wa.me/${contatosDaMarca.whatsapp}?text=${mensagemWhatsApp(produtoSelecionado)}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex-1 bg-[#4a7c59] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#396824] transition-colors text-center"
+                className="flex-1 bg-[#013e72] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#012b50] transition-colors text-center"
               >
                 Pedir pelo WhatsApp
               </a>
               <button
                 onClick={() => setProdutoSelecionado(null)}
-                className="flex-1 border border-[#4a7c59]/25 text-[#5a6b5e] px-6 py-3 rounded-full text-sm font-light hover:border-[#4a7c59] transition-colors"
+                className="flex-1 border border-[#013e72]/25 text-[#5a6b5e] px-6 py-3 rounded-full text-sm font-light hover:border-[#013e72] transition-colors"
               >
                 Fechar
               </button>
