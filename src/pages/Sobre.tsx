@@ -86,7 +86,7 @@ const evolucaoAnual = [
     fase: 'Consolidação',
     mulheres: '523',
     oficinas: '35',
-    municipios: '3 estados',
+    municipios: '3',
     oleo: '4.936 L',
     agua: '123,4 milhões L',
     descricao:
