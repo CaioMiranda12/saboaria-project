@@ -58,5 +58,6 @@ export const contatosDaMarca = {
   whatsapp: '5585987052241',
   instagram: 'saboariaecologica',
   email: 'saboariaecologica@gmail.com',
+  linkedin: 'saboaria-ecol%C3%B3gica-2a8520365',
   endereco: 'Av. Ulisses Guimarães, 3132 - Iparana',
 }

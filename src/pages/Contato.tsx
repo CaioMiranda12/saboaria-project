@@ -57,22 +57,23 @@ const canaisDeContato = [
     ),
   },
   {
-    nome: 'Endereço',
-    valor: contatosDaMarca.endereco,
-    href: 'https://maps.google.com/?q=Av.+Ulisses+Guimarães,+3132,+Iparana',
+    nome: 'Linkedin',
+    valor: 'Saboaria Ecológica',
+    href: `https://linkedin.com/in/${contatosDaMarca.linkedin}`,
     icone: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4a7c59" strokeWidth="2">
-        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-        <circle cx="12" cy="10" r="3" />
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4a7c59" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+        <rect x="2" y="9" width="4" height="12" />
+        <circle cx="4" cy="4" r="2" />
       </svg>
     ),
   },
 ]
 
 const horarioDeAtendimento = [
-  { dia: 'Segunda a sexta', hora: '08h às 17h' },
-  { dia: 'Sábado', hora: '08h às 12h' },
-  { dia: 'Domingo', hora: 'Fechado' },
+  { dia: 'Segunda a Quinta', hora: '09h às 17h' },
+  { dia: 'Sexta', hora: '09h às 18h' },
+  { dia: 'Sábado e Domingo', hora: 'Fechado' },
 ]
 
 const campoBaseClasse =
@@ -138,9 +139,15 @@ const Contato = () => {
 
       {/* Formulário + Info lateral */}
       <div className="grid grid-cols-1 md:grid-cols-2 border-t border-[#4a7c59]/10">
+        <div className='flex justify-center items-center'>
+          <img
+            src='/logo-2.png'
+            alt="Logo da Saboaria Ecológica"
+          />
+        </div>
 
         {/* Formulário */}
-        <div className="px-5 md:px-16 py-14 md:py-20 bg-[#f7f3ec]">
+        {/* <div className="px-5 md:px-16 py-14 md:py-20 bg-[#f7f3ec]">
           <p className="text-xs font-medium tracking-widest uppercase text-[#4a7c59] mb-2">Formulário</p>
           <h2 className="font-serif text-3xl md:text-4xl text-[#396824] mb-2 leading-tight">
             Envie uma <em className="text-[#4a7c59]">mensagem</em>
@@ -224,7 +231,7 @@ const Contato = () => {
               {isSubmitting ? 'Enviando...' : 'Enviar mensagem'}
             </button>
           </form>
-        </div>
+        </div> */}
 
         {/* Info lateral */}
         <div className="bg-[#396824] px-5 md:px-14 py-14 md:py-20 flex flex-col gap-6">

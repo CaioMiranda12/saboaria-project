@@ -44,12 +44,9 @@ const Home = () => {
         </div>
         <div className="relative bg-[#4a7c59] flex items-center justify-center overflow-hidden min-h-64 md:min-h-0">
           <div className="absolute inset-0 opacity-5 bg-[repeating-linear-gradient(45deg,#fff,#fff_1px,transparent_1px,transparent_30px)]" />
-          <div className="relative z-10 w-64 md:w-80 h-80 md:h-96 bg-white/10 rounded-3xl border border-white/20 flex items-center justify-center flex-col gap-4">
-            <div className="w-28 h-20 bg-white/90 rounded-2xl flex items-center justify-center">
-              <div className="w-16 h-10 bg-[#4a7c59] rounded-xl" />
-            </div>
-            <span className="text-white/60 text-xs tracking-widest uppercase">Artesanal · Biodegradável</span>
-          </div>
+          <img
+            src='/logo.png'
+          />
           <div className="absolute bottom-8 left-8 bg-white/95 rounded-2xl px-4 py-3 flex items-center gap-3">
             <span className="w-2.5 h-2.5 rounded-full bg-[#4a7c59]" />
             <div>
@@ -98,13 +95,18 @@ const Home = () => {
             ))}
           </div>
         </div>
-        <div className="bg-[#4a7c59] rounded-3xl flex items-center justify-center p-10 md:p-12 min-h-64 md:min-h-96">
-          <div className="text-center text-white">
+        <div className='drop-shadow-xl'>
+          {/* <div className="text-center text-white">
             <h3 className="font-serif text-2xl md:text-3xl font-bold mb-3">Economia Circular</h3>
             <p className="text-white/70 text-sm font-light leading-relaxed">
               Cada litro de óleo reutilizado evita<br />a contaminação de 25 mil litros<br />de água potável.
             </p>
-          </div>
+          </div> */}
+          <img
+            src='/economia-circular.jpg'
+            alt="Economia Circular"
+            className="w-full h-full object-contain"
+          />
         </div>
       </section>
 
