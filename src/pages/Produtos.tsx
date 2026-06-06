@@ -32,17 +32,34 @@ const Produtos = () => {
       {/* Hero */}
       <section className="bg-[#013e72] pt-28 pb-16 px-6 md:px-20 relative overflow-hidden">
         <div className="absolute top-[-80px] right-[-80px] w-96 h-96 rounded-full bg-white/[0.04]" />
-        <div className="relative z-10 max-w-xl">
-          <span className="inline-flex items-center gap-2 bg-white/10 text-white/80 px-4 py-2 rounded-full text-xs font-medium uppercase tracking-widest mb-6 w-fit">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#013e72]" />
-            Produtos artesanais
-          </span>
-          <h1 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-5">
-            Limpeza <em className="text-white/45">natural</em><br />para cada uso
-          </h1>
-          <p className="text-white/60 font-light leading-relaxed text-base">
-            Todos os nossos produtos são feitos à mão com óleo reutilizado, ingredientes naturais e embalagens biodegradáveis.
-          </p>
+        <div className='flex justify-between'>
+          <div className="relative z-10 max-w-xl">
+            <span className="inline-flex items-center gap-2 bg-white/10 text-white/80 px-4 py-2 rounded-full text-xs font-medium uppercase tracking-widest mb-6 w-fit">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#013e72]" />
+              Produtos artesanais
+            </span>
+            <h1 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-5">
+              Limpeza <em className="text-white/45">natural</em><br />para cada uso
+            </h1>
+            <p className="text-white/60 font-light leading-relaxed text-base">
+              Todos os nossos produtos são feitos à mão com óleo reutilizado, ingredientes naturais e embalagens biodegradáveis.
+            </p>
+          </div>
+
+          <div className='flex flex-col items-center lg:flex-row'>
+            <img
+              src={'/logo.png'}
+              alt="Saboaria Ecológica"
+              className="max-w-100 w-full md:w-1/2 h-full object-contain"
+            />
+
+            <img
+              src={'/logo-ellas.png'}
+              alt="Saboaria Ecológica"
+              className="max-w-125 w-full md:w-1/2 h-full object-contain"
+            />
+
+          </div>
         </div>
       </section>
 
