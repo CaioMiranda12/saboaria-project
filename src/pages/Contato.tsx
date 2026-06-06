@@ -1,26 +1,22 @@
-import { useForm } from 'react-hook-form'
-import { z } from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { toast } from 'react-toastify'
 import { contatosDaMarca } from '../data/marca'
 
-const schemaFormularioContato = z.object({
-  nomeCompleto: z.string().min(3, 'Informe seu nome completo'),
-  email: z.string().email('E-mail inválido'),
-  telefone: z.string().min(10, 'Informe um telefone válido'),
-  assunto: z.string().min(1, 'Selecione um assunto'),
-  mensagem: z.string().min(20, 'Mensagem deve ter pelo menos 20 caracteres'),
-})
+// const schemaFormularioContato = z.object({
+//   nomeCompleto: z.string().min(3, 'Informe seu nome completo'),
+//   email: z.string().email('E-mail inválido'),
+//   telefone: z.string().min(10, 'Informe um telefone válido'),
+//   assunto: z.string().min(1, 'Selecione um assunto'),
+//   mensagem: z.string().min(20, 'Mensagem deve ter pelo menos 20 caracteres'),
+// })
 
-type DadosDoFormulario = z.infer<typeof schemaFormularioContato>
+// type DadosDoFormulario = z.infer<typeof schemaFormularioContato>
 
-const opcoesDeAssunto = [
-  'Pedido de produtos',
-  'Dúvida sobre produtos',
-  'Parceria comercial',
-  'Doação de óleo',
-  'Outro',
-]
+// const opcoesDeAssunto = [
+//   'Pedido de produtos',
+//   'Dúvida sobre produtos',
+//   'Parceria comercial',
+//   'Doação de óleo',
+//   'Outro',
+// ]
 
 const canaisDeContato = [
   {
@@ -77,26 +73,26 @@ const horarioDeAtendimento = [
   { dia: 'Sábado e Domingo', hora: 'Fechado' },
 ]
 
-const campoBaseClasse =
-  'w-full bg-white border border-[#4a7c59]/20 rounded-xl px-4 py-3 text-sm text-[#1a2e1f] font-light outline-none focus:border-[#4a7c59] transition-colors'
+// const campoBaseClasse =
+//   'w-full bg-white border border-[#4a7c59]/20 rounded-xl px-4 py-3 text-sm text-[#1a2e1f] font-light outline-none focus:border-[#4a7c59] transition-colors'
 
 const Contato = () => {
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors, isSubmitting },
-  } = useForm<DadosDoFormulario>({
-    resolver: zodResolver(schemaFormularioContato),
-  })
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   reset,
+  //   formState: { errors, isSubmitting },
+  // } = useForm<DadosDoFormulario>({
+  //   resolver: zodResolver(schemaFormularioContato),
+  // })
 
-  const aoEnviarFormulario = async (dados: DadosDoFormulario) => {
-    // Aqui você conecta ao backend ou serviço de e-mail futuramente
-    console.log(dados)
-    await new Promise((resolve) => setTimeout(resolve, 800))
-    toast.success('Mensagem enviada com sucesso! Retornaremos em breve.')
-    reset()
-  }
+  // const aoEnviarFormulario = async (dados: DadosDoFormulario) => {
+  //   // Aqui você conecta ao backend ou serviço de e-mail futuramente
+  //   console.log(dados)
+  //   await new Promise((resolve) => setTimeout(resolve, 800))
+  //   toast.success('Mensagem enviada com sucesso! Retornaremos em breve.')
+  //   reset()
+  // }
 
   return (
     <div className="bg-[#f7f3ec] text-[#1a2e1f]">
