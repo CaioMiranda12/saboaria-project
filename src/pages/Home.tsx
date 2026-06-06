@@ -124,7 +124,7 @@ const Home = () => {
           </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {listaDeProdutos.map((produto) => (
+          {listaDeProdutos.slice(0, 4).map((produto) => (
             <CardProduto key={produto.id} produto={produto} />
           ))}
         </div>

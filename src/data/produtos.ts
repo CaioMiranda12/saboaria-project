@@ -183,7 +183,7 @@ export const listaDeProdutos: Produto[] = [
     badge: 'Biodegradável',
     destaque: false,
     consultarFragrancias: true,
-    imagem: null,
+    imagem: '/sabao-em-po.png',
   },
   {
     id: 'sabonete-em-cachos',
@@ -201,7 +201,7 @@ export const listaDeProdutos: Produto[] = [
       'Aplique sobre a pele úmida, massageando suavemente até formar espuma. Enxágue em seguida.',
     badge: 'Biodegradável',
     destaque: true,
-    imagem: null,
+    imagem: '/sabonete-em-cachos.png',
   },
 
 ]
