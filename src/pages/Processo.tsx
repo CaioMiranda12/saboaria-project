@@ -36,7 +36,7 @@ const Processo = () => {
           <img
             src={'/logo.png'}
             alt="Saboaria Ecológica"
-            className="max-w-100 w-full md:w-1/2 h-full object-contain"
+            className="max-w-100 w-1/2 h-full object-contain"
           />
 
           <div></div>
