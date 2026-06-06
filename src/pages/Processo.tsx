@@ -17,19 +17,29 @@ const Processo = () => {
   return (
     <div className="bg-[#f7f3ec] text-[#1a2e1f]">
       {/* Hero */}
-      <section className="bg-[#2d4f38] pt-24 md:pt-28 pb-16 md:pb-20 px-5 md:px-20 relative overflow-hidden">
+      <section className="bg-[#396824] pt-24 md:pt-28 pb-16 md:pb-20 px-5 md:px-20 relative overflow-hidden">
         <div className="absolute top-[-60px] right-[-60px] w-72 md:w-96 h-72 md:h-96 rounded-full bg-white/[0.04]" />
-        <div className="relative z-10 max-w-2xl">
-          <span className="inline-flex items-center gap-2 bg-white/10 text-white/80 px-4 py-2 rounded-full text-xs font-medium uppercase tracking-widest mb-5 w-fit">
-            Como produzimos
-          </span>
-          <h1 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-4">
-            Do resíduo ao produto<br />
-            <em className="text-white/50">sustentável</em>
-          </h1>
-          <p className="text-white/65 font-light leading-relaxed text-sm md:text-base max-w-xl">
-            Cada produto nasce de um processo artesanal responsável, que transforma óleo saturado de fritura em limpeza eficaz e biodegradável, sem agredir o meio ambiente.
-          </p>
+        <div className='flex justify-between items-center'>
+          <div className="relative z-10 max-w-2xl">
+            <span className="inline-flex items-center gap-2 bg-white/10 text-white/80 px-4 py-2 rounded-full text-xs font-medium uppercase tracking-widest mb-5 w-fit">
+              Como produzimos
+            </span>
+            <h1 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-4">
+              Do resíduo ao produto<br />
+              <em className="text-white/50">sustentável</em>
+            </h1>
+            <p className="text-white/65 font-light leading-relaxed text-sm md:text-base max-w-xl">
+              Cada produto nasce de um processo artesanal responsável, que transforma óleo saturado de fritura em limpeza eficaz e biodegradável, sem agredir o meio ambiente.
+            </p>
+          </div>
+
+          <img
+            src={'/logo.png'}
+            alt="Saboaria Ecológica"
+            className="max-w-100 w-1/2 h-full object-contain"
+          />
+
+          <div></div>
         </div>
       </section>
 
@@ -52,7 +62,7 @@ const Processo = () => {
       {/* Timeline de etapas */}
       <section className="px-5 md:px-20 py-16 md:py-20 bg-[#f7f3ec]">
         <p className="text-xs font-medium tracking-widest uppercase text-[#4a7c59] mb-2">Passo a passo</p>
-        <h2 className="font-serif text-3xl md:text-4xl text-[#2d4f38] mb-10 md:mb-12 leading-tight">
+        <h2 className="font-serif text-3xl md:text-4xl text-[#396824] mb-10 md:mb-12 leading-tight">
           As etapas do nosso <em className="text-[#4a7c59]">processo natural</em>
         </h2>
         <div>
@@ -69,7 +79,7 @@ const Processo = () => {
       {/* Princípios */}
       <section className="px-5 md:px-20 py-16 md:py-20 bg-white border-t border-[#4a7c59]/10">
         <p className="text-xs font-medium tracking-widest uppercase text-[#4a7c59] mb-2">Nossos princípios</p>
-        <h2 className="font-serif text-3xl md:text-4xl text-[#2d4f38] mb-10 leading-tight">
+        <h2 className="font-serif text-3xl md:text-4xl text-[#396824] mb-10 leading-tight">
           O que guia cada <em className="text-[#4a7c59]">decisão de produção</em>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -81,7 +91,7 @@ const Processo = () => {
               <div className="w-11 h-11 rounded-xl bg-[#e8f0e9] flex items-center justify-center mb-4">
                 <span className="w-2 h-2 rounded-full bg-[#4a7c59]" />
               </div>
-              <h3 className="text-sm font-medium text-[#2d4f38] mb-2">{principio.titulo}</h3>
+              <h3 className="text-sm font-medium text-[#396824] mb-2">{principio.titulo}</h3>
               <p className="text-xs text-[#5a6b5e] leading-relaxed font-light">{principio.texto}</p>
             </div>
           ))}
@@ -93,7 +103,7 @@ const Processo = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div>
             <p className="text-xs font-medium tracking-widest uppercase text-[#4a7c59] mb-2">Ingredientes</p>
-            <h2 className="font-serif text-3xl md:text-4xl text-[#2d4f38] mb-3 leading-tight">
+            <h2 className="font-serif text-3xl md:text-4xl text-[#396824] mb-3 leading-tight">
               O que entra em cada <em className="text-[#4a7c59]">produto</em>
             </h2>
             <p className="text-sm text-[#5a6b5e] font-light leading-relaxed mb-6">
@@ -107,7 +117,7 @@ const Processo = () => {
                 >
                   <span className="w-2 h-2 rounded-full bg-[#4a7c59] flex-shrink-0" />
                   <div>
-                    <p className="text-sm font-medium text-[#2d4f38]">{ing.nome}</p>
+                    <p className="text-sm font-medium text-[#396824]">{ing.nome}</p>
                     <p className="text-xs text-[#5a6b5e] font-light">{ing.descricao}</p>
                   </div>
                 </div>
@@ -134,7 +144,7 @@ const Processo = () => {
       </section>
 
       {/* CTA */}
-      <section className="px-5 md:px-20 py-16 md:py-20 bg-[#2d4f38] flex flex-col items-center text-center">
+      <section className="px-5 md:px-20 py-16 md:py-20 bg-[#396824] flex flex-col items-center text-center">
         <h2 className="font-serif text-3xl md:text-4xl text-white mb-3">
           Conheça os <em className="text-white/45">produtos</em>
         </h2>
@@ -144,7 +154,7 @@ const Processo = () => {
         <div className="flex flex-col sm:flex-row gap-3">
           <Link
             to="/produtos"
-            className="bg-white text-[#2d4f38] px-8 py-3 rounded-full text-sm font-medium hover:opacity-90 transition-opacity text-center"
+            className="bg-white text-[#396824] px-8 py-3 rounded-full text-sm font-medium hover:opacity-90 transition-opacity text-center"
           >
             Ver produtos
           </Link>

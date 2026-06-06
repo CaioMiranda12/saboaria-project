@@ -22,11 +22,11 @@ const Home = () => {
       {/* Hero */}
       <section className="min-h-screen grid grid-cols-1 md:grid-cols-2 pt-20">
         <div className="flex flex-col justify-center px-6 md:px-20 py-16 md:py-20">
-          <span className="inline-flex items-center gap-2 bg-[#e8f0e9] text-[#2d4f38] px-4 py-2 rounded-full text-xs font-medium uppercase tracking-widest mb-8 w-fit">
+          <span className="inline-flex items-center gap-2 bg-[#e8f0e9] text-[#396824] px-4 py-2 rounded-full text-xs font-medium uppercase tracking-widest mb-8 w-fit">
             <span className="w-1.5 h-1.5 rounded-full bg-[#4a7c59]" />
             Negócio social sustentável
           </span>
-          <h1 className="font-serif text-4xl md:text-6xl leading-tight text-[#2d4f38] mb-6">
+          <h1 className="font-serif text-4xl md:text-6xl leading-tight text-[#396824] mb-6">
             Limpeza que<br />
             <em className="text-[#4a7c59]">cuida do planeta</em>
           </h1>
@@ -34,7 +34,7 @@ const Home = () => {
             Transformamos óleo de fritura em produtos de limpeza biodegradáveis, gerando renda em comunidades e preservando o meio ambiente.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-            <Link to="/produtos" className="bg-[#4a7c59] text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-[#2d4f38] transition-all hover:-translate-y-0.5 text-center">
+            <Link to="/produtos" className="bg-[#4a7c59] text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-[#396824] transition-all hover:-translate-y-0.5 text-center">
               Ver produtos
             </Link>
             <Link to="/sobre" className="text-[#4a7c59] text-sm font-medium flex items-center gap-1 hover:gap-2 transition-all">
@@ -44,16 +44,13 @@ const Home = () => {
         </div>
         <div className="relative bg-[#4a7c59] flex items-center justify-center overflow-hidden min-h-64 md:min-h-0">
           <div className="absolute inset-0 opacity-5 bg-[repeating-linear-gradient(45deg,#fff,#fff_1px,transparent_1px,transparent_30px)]" />
-          <div className="relative z-10 w-64 md:w-80 h-80 md:h-96 bg-white/10 rounded-3xl border border-white/20 flex items-center justify-center flex-col gap-4">
-            <div className="w-28 h-20 bg-white/90 rounded-2xl flex items-center justify-center">
-              <div className="w-16 h-10 bg-[#4a7c59] rounded-xl" />
-            </div>
-            <span className="text-white/60 text-xs tracking-widest uppercase">Artesanal · Biodegradável</span>
-          </div>
+          <img
+            src='/logo.png'
+          />
           <div className="absolute bottom-8 left-8 bg-white/95 rounded-2xl px-4 py-3 flex items-center gap-3">
             <span className="w-2.5 h-2.5 rounded-full bg-[#4a7c59]" />
             <div>
-              <p className="text-xs font-medium text-[#2d4f38]">100% Biodegradável</p>
+              <p className="text-xs font-medium text-[#396824]">100% Biodegradável</p>
               <p className="text-xs text-[#5a6b5e] font-light">Feito com óleo reutilizado</p>
             </div>
           </div>
@@ -78,7 +75,7 @@ const Home = () => {
       <section className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24 px-6 md:px-20 py-16 md:py-24 bg-white border-t border-[#4a7c59]/10">
         <div>
           <p className="text-xs font-medium tracking-widest uppercase text-[#4a7c59] mb-3">Quem somos</p>
-          <h2 className="font-serif text-3xl md:text-4xl text-[#2d4f38] leading-tight mb-5">
+          <h2 className="font-serif text-3xl md:text-4xl text-[#396824] leading-tight mb-5">
             Um movimento de <em className="text-[#4a7c59]">consciência ambiental</em>
           </h2>
           <p className="text-[#5a6b5e] leading-relaxed font-light mb-8">
@@ -91,20 +88,25 @@ const Home = () => {
                   <span className="w-2 h-2 rounded-full bg-[#4a7c59]" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-[#2d4f38] mb-1">{pilar.titulo}</p>
+                  <p className="text-sm font-medium text-[#396824] mb-1">{pilar.titulo}</p>
                   <p className="text-xs text-[#5a6b5e] leading-relaxed font-light">{pilar.texto}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        <div className="bg-[#4a7c59] rounded-3xl flex items-center justify-center p-10 md:p-12 min-h-64 md:min-h-96">
-          <div className="text-center text-white">
+        <div className='drop-shadow-xl'>
+          {/* <div className="text-center text-white">
             <h3 className="font-serif text-2xl md:text-3xl font-bold mb-3">Economia Circular</h3>
             <p className="text-white/70 text-sm font-light leading-relaxed">
               Cada litro de óleo reutilizado evita<br />a contaminação de 25 mil litros<br />de água potável.
             </p>
-          </div>
+          </div> */}
+          <img
+            src='/economia-circular.jpg'
+            alt="Economia Circular"
+            className="w-full h-full object-contain"
+          />
         </div>
       </section>
 
@@ -113,7 +115,7 @@ const Home = () => {
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-10 md:mb-12">
           <div>
             <p className="text-xs font-medium tracking-widest uppercase text-[#4a7c59] mb-3">Nossos produtos</p>
-            <h2 className="font-serif text-3xl md:text-4xl text-[#2d4f38]">
+            <h2 className="font-serif text-3xl md:text-4xl text-[#396824]">
               Limpeza <em className="text-[#4a7c59]">natural</em> para cada necessidade
             </h2>
           </div>
@@ -122,7 +124,7 @@ const Home = () => {
           </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {listaDeProdutos.map((produto) => (
+          {listaDeProdutos.slice(0, 4).map((produto) => (
             <CardProduto key={produto.id} produto={produto} />
           ))}
         </div>
@@ -131,16 +133,16 @@ const Home = () => {
       {/* Processo */}
       <section className="px-6 md:px-20 py-16 md:py-24 bg-white border-t border-[#4a7c59]/10">
         <p className="text-xs font-medium tracking-widest uppercase text-[#4a7c59] mb-3">Como fazemos</p>
-        <h2 className="font-serif text-3xl md:text-4xl text-[#2d4f38] mb-10 md:mb-12">
+        <h2 className="font-serif text-3xl md:text-4xl text-[#396824] mb-10 md:mb-12">
           Do resíduo ao produto <em className="text-[#4a7c59]">sustentável</em>
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {etapasDoProcesso.map((etapa, i) => (
             <div key={i} className="text-center">
               <div className="w-14 h-14 rounded-full bg-[#e8f0e9] border-2 border-[#4a7c59]/20 flex items-center justify-center mx-auto mb-4">
-                <span className="font-serif text-xl font-bold text-[#2d4f38]">{etapa.numero}</span>
+                <span className="font-serif text-xl font-bold text-[#396824]">{etapa.numero}</span>
               </div>
-              <h3 className="text-sm font-medium text-[#2d4f38] mb-2">{etapa.titulo}</h3>
+              <h3 className="text-sm font-medium text-[#396824] mb-2">{etapa.titulo}</h3>
               <p className="text-xs text-[#5a6b5e] leading-relaxed font-light">{etapa.texto}</p>
             </div>
           ))}
@@ -148,7 +150,7 @@ const Home = () => {
       </section>
 
       {/* CTA */}
-      <section className="px-6 md:px-20 py-16 md:py-24 bg-[#2d4f38] text-center flex flex-col items-center">
+      <section className="px-6 md:px-20 py-16 md:py-24 bg-[#396824] text-center flex flex-col items-center">
         <h2 className="font-serif text-4xl md:text-5xl text-white mb-4">
           Faça parte <em className="text-white/50">desse movimento</em>
         </h2>
@@ -160,7 +162,7 @@ const Home = () => {
             href={`https://wa.me/${contatosDaMarca.whatsapp}`}
             target="_blank"
             rel="noreferrer"
-            className="bg-white text-[#2d4f38] px-8 py-3.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity text-center"
+            className="bg-white text-[#396824] px-8 py-3.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity text-center"
           >
             Pedir pelo WhatsApp
           </a>

@@ -1,10 +1,12 @@
 import { Outlet } from 'react-router-dom'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import ScrollAoTrocarPagina from './ScrollAoTrocarPagina'
 
 const Layout = () => {
   return (
     <div className="bg-[#f7f3ec] text-[#1a2e1f]">
+      <ScrollAoTrocarPagina />
       <Navbar />
       <main>
         <Outlet />
