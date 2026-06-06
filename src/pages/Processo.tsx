@@ -19,17 +19,27 @@ const Processo = () => {
       {/* Hero */}
       <section className="bg-[#396824] pt-24 md:pt-28 pb-16 md:pb-20 px-5 md:px-20 relative overflow-hidden">
         <div className="absolute top-[-60px] right-[-60px] w-72 md:w-96 h-72 md:h-96 rounded-full bg-white/[0.04]" />
-        <div className="relative z-10 max-w-2xl">
-          <span className="inline-flex items-center gap-2 bg-white/10 text-white/80 px-4 py-2 rounded-full text-xs font-medium uppercase tracking-widest mb-5 w-fit">
-            Como produzimos
-          </span>
-          <h1 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-4">
-            Do resíduo ao produto<br />
-            <em className="text-white/50">sustentável</em>
-          </h1>
-          <p className="text-white/65 font-light leading-relaxed text-sm md:text-base max-w-xl">
-            Cada produto nasce de um processo artesanal responsável, que transforma óleo saturado de fritura em limpeza eficaz e biodegradável, sem agredir o meio ambiente.
-          </p>
+        <div className='flex justify-between items-center'>
+          <div className="relative z-10 max-w-2xl">
+            <span className="inline-flex items-center gap-2 bg-white/10 text-white/80 px-4 py-2 rounded-full text-xs font-medium uppercase tracking-widest mb-5 w-fit">
+              Como produzimos
+            </span>
+            <h1 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-4">
+              Do resíduo ao produto<br />
+              <em className="text-white/50">sustentável</em>
+            </h1>
+            <p className="text-white/65 font-light leading-relaxed text-sm md:text-base max-w-xl">
+              Cada produto nasce de um processo artesanal responsável, que transforma óleo saturado de fritura em limpeza eficaz e biodegradável, sem agredir o meio ambiente.
+            </p>
+          </div>
+
+          <img
+            src={'/logo.png'}
+            alt="Saboaria Ecológica"
+            className="max-w-100 w-full md:w-1/2 h-full object-contain"
+          />
+
+          <div></div>
         </div>
       </section>
 

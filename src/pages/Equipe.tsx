@@ -2,12 +2,14 @@ import { equipe } from "../data/marca";
 
 export function Equipe() {
   return (
-    <section className="px-5 md:px-20 py-14 md:py-20 bg-[#f7f3ec]">
-      <div className="max-w-5xl mx-auto">
+    <section className="px-5 md:px-20 py-14 md:py-20 bg-[#f7f3ec] relative">
+      <img
+        src='/logo-2.png'
+        alt="Saboaria Ecológica"
+        className="absolute top-16 right-6 w-24 md:w-32 object-contain z-40"
+      />
 
-        {/* <span className="text-xs font-medium uppercase tracking-widest text-[#396824] mb-3 block">
-          EQUIPE
-        </span> */}
+      <div className="max-w-5xl mx-auto pt-32 md:pt-0">
         <h2 className="font-serif text-3xl md:text-5xl text-[#2d4f38] mb-4">
           Nossa <em className="text-[#396824]">equipe</em>
         </h2>
