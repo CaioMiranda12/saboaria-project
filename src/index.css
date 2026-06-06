@@ -3,6 +3,21 @@
 @theme {
   --font-serif: "Playfair Display", serif;
   --font-sans: "DM Sans", sans-serif;
+
+  /* Verde */
+  --color-verde-principal: #396824;
+  --color-verde-escuro: #2d4f38;
+  --color-verde-medio: #4a7c59;
+  --color-verde-claro: #e8f0e9;
+  --color-verde-muted: #5a6b5e;
+  --color-creme: #f7f3ec;
+
+  /* Azul */
+  --color-azul-principal: #013e72;
+  --color-azul-escuro: #012b50;
+  --color-azul-medio: #1a5e9e;
+  --color-azul-claro: #e0ecf8;
+  --color-azul-muted: #4a6a8a;
 }
 
 button {

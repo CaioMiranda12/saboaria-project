@@ -27,7 +27,7 @@ const pilaresInstitucionais = [
     titulo: 'Missão',
     texto: historiaDaMarca.missao,
     icone: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4a7c59" strokeWidth="2">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#396824" strokeWidth="2">
         <circle cx="12" cy="12" r="10" /><path d="M12 8v4l3 3" />
       </svg>
     ),
@@ -36,7 +36,7 @@ const pilaresInstitucionais = [
     titulo: 'Visão',
     texto: historiaDaMarca.visao,
     icone: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4a7c59" strokeWidth="2">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#396824" strokeWidth="2">
         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" />
       </svg>
     ),
@@ -45,7 +45,7 @@ const pilaresInstitucionais = [
     titulo: 'Valores',
     texto: historiaDaMarca.valores,
     icone: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4a7c59" strokeWidth="2">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#396824" strokeWidth="2">
         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
       </svg>
     ),
@@ -189,24 +189,24 @@ const Sobre = () => {
       </section>
 
       {/* Missão, Visão e Valores */}
-      <div className="grid grid-cols-1 md:grid-cols-3 bg-white border-t border-[#4a7c59]/10">
+      <div className="grid grid-cols-1 md:grid-cols-3 bg-white border-t border-[#396824]/10">
         {pilaresInstitucionais.map((pilar, i) => (
-          <div key={pilar.titulo} className={`p-8 md:p-10 ${i < 2 ? 'border-b md:border-b-0 md:border-r border-[#4a7c59]/10' : ''}`}>
+          <div key={pilar.titulo} className={`p-8 md:p-10 ${i < 2 ? 'border-b md:border-b-0 md:border-r border-[#396824]/10' : ''}`}>
             <div className="w-12 h-12 rounded-xl bg-[#e8f0e9] flex items-center justify-center mb-5">
               {pilar.icone}
             </div>
-            <p className="text-xs font-medium tracking-widest uppercase text-[#4a7c59] mb-2">{pilar.titulo}</p>
+            <p className="text-xs font-medium tracking-widest uppercase text-[#396824] mb-2">{pilar.titulo}</p>
             <p className="text-sm text-[#5a6b5e] leading-relaxed font-light">{pilar.texto}</p>
           </div>
         ))}
       </div>
 
       {/* História + Números */}
-      <section className="grid grid-cols-1 md:grid-cols-2 border-t border-[#4a7c59]/10">
+      <section className="grid grid-cols-1 md:grid-cols-2 border-t border-[#396824]/10">
         <div className="px-6 md:px-20 py-16 md:py-20 bg-[#f7f3ec] flex flex-col gap-5">
-          <p className="text-xs font-medium tracking-widest uppercase text-[#4a7c59]">Nossa trajetória</p>
+          <p className="text-xs font-medium tracking-widest uppercase text-[#396824]">Nossa trajetória</p>
           <h2 className="font-serif text-3xl md:text-4xl text-[#396824] leading-tight">
-            Transformar resíduos em <em className="text-[#4a7c59]">soluções reais</em>
+            Transformar resíduos em <em className="text-[#396824]">soluções reais</em>
           </h2>
           {imagensDaPagina.trajetoria && (
             <div className="rounded-2xl overflow-hidden h-52 md:h-full">
@@ -232,7 +232,7 @@ const Sobre = () => {
             </p>
           </div>
         </div>
-        <div className="bg-[#4a7c59] px-6 md:px-16 py-16 md:py-20 flex flex-col justify-center gap-5">
+        <div className="bg-[#396824] px-6 md:px-16 py-16 md:py-20 flex flex-col justify-center gap-5">
           <p className="text-white/60 text-xs font-medium tracking-widest uppercase">Impacto consolidado 2023–2025</p>
           {numerosDeImpacto.map((item) => (
             <div key={item.numero} className="bg-white/10 border border-white/15 rounded-2xl p-6">
@@ -244,10 +244,10 @@ const Sobre = () => {
       </section>
 
       {/* Evolução anual */}
-      <section className="px-6 md:px-20 py-16 md:py-20 bg-white border-t border-[#4a7c59]/10">
-        <p className="text-xs font-medium tracking-widest uppercase text-[#4a7c59] mb-3">Crescimento ano a ano</p>
+      <section className="px-6 md:px-20 py-16 md:py-20 bg-white border-t border-[#396824]/10">
+        <p className="text-xs font-medium tracking-widest uppercase text-[#396824] mb-3">Crescimento ano a ano</p>
         <h2 className="font-serif text-3xl md:text-4xl text-[#396824] mb-4">
-          Evolução do <em className="text-[#4a7c59]">impacto socioambiental</em>
+          Evolução do <em className="text-[#396824]">impacto socioambiental</em>
         </h2>
         <p className="text-[#5a6b5e] font-light text-sm leading-relaxed max-w-2xl mb-8">
           Em apenas três anos de atuação, a Saboaria Ecológica multiplicou por mais de quinze vezes o número de mulheres atendidas e quadruplicou o volume de óleo reaproveitado. Cada ano representa uma fase distinta de crescimento, com aprendizados, conquistas e desafios que moldaram o projeto que existe hoje.
@@ -263,7 +263,7 @@ const Sobre = () => {
         )}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {evolucaoAnual.map((ano) => (
-            <div key={ano.ano} className="border border-[#4a7c59]/15 rounded-2xl p-6 flex flex-col gap-4">
+            <div key={ano.ano} className="border border-[#396824]/15 rounded-2xl p-6 flex flex-col gap-4">
               <div className="flex items-center justify-between">
                 <span className="font-serif text-3xl font-bold text-[#396824]">{ano.ano}</span>
                 <span className="text-xs font-medium uppercase tracking-widest bg-[#e8f0e9] text-[#396824] px-3 py-1 rounded-full">
@@ -299,12 +299,12 @@ const Sobre = () => {
       </section>
 
       {/* Contribuições */}
-      <section className="px-6 md:px-20 py-16 md:py-20 bg-[#f7f3ec] border-t border-[#4a7c59]/10">
+      <section className="px-6 md:px-20 py-16 md:py-20 bg-[#f7f3ec] border-t border-[#396824]/10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
           <div>
-            <p className="text-xs font-medium tracking-widest uppercase text-[#4a7c59] mb-3">Nosso impacto</p>
+            <p className="text-xs font-medium tracking-widest uppercase text-[#396824] mb-3">Nosso impacto</p>
             <h2 className="font-serif text-3xl md:text-4xl text-[#396824] mb-4">
-              Contribuímos para um <em className="text-[#4a7c59]">futuro melhor</em>
+              Contribuímos para um <em className="text-[#396824]">futuro melhor</em>
             </h2>
             <p className="text-[#5a6b5e] font-light text-sm leading-relaxed mb-8">
               O impacto da Saboaria Ecológica é multidimensional. Cada ação realizada conecta preservação ambiental, desenvolvimento humano e fortalecimento comunitário — porque acreditamos que sustentabilidade verdadeira só existe quando inclui as pessoas.
@@ -313,10 +313,10 @@ const Sobre = () => {
               {contribuicoes.map((item) => (
                 <div
                   key={item.titulo}
-                  className="p-6 rounded-2xl border border-[#4a7c59]/12 hover:border-[#4a7c59] hover:bg-white transition-all"
+                  className="p-6 rounded-2xl border border-[#396824]/12 hover:border-[#396824] hover:bg-white transition-all"
                 >
                   <div className="w-8 h-8 rounded-lg bg-[#e8f0e9] flex items-center justify-center mb-3">
-                    <span className="w-2 h-2 rounded-full bg-[#4a7c59]" />
+                    <span className="w-2 h-2 rounded-full bg-[#396824]" />
                   </div>
                   <p className="text-sm font-medium text-[#396824] mb-2">{item.titulo}</p>
                   <p className="text-sm text-[#5a6b5e] leading-relaxed font-light">{item.texto}</p>
@@ -357,12 +357,12 @@ const Sobre = () => {
       </section>
 
       {/* Reconhecimentos + Parcerias */}
-      <section className="px-6 md:px-20 py-16 md:py-20 bg-white border-t border-[#4a7c59]/10">
+      <section className="px-6 md:px-20 py-16 md:py-20 bg-white border-t border-[#396824]/10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
           <div>
-            <p className="text-xs font-medium tracking-widest uppercase text-[#4a7c59] mb-3">Conquistas</p>
+            <p className="text-xs font-medium tracking-widest uppercase text-[#396824] mb-3">Conquistas</p>
             <h2 className="font-serif text-3xl md:text-4xl text-[#396824] mb-4">
-              Reconhecimentos e <em className="text-[#4a7c59]">marcos</em>
+              Reconhecimentos e <em className="text-[#396824]">marcos</em>
             </h2>
             <p className="text-[#5a6b5e] font-light text-sm leading-relaxed mb-8">
               Ao longo de sua trajetória, a Saboaria Ecológica acumulou reconhecimentos que validam seu modelo de impacto e ampliam sua visibilidade no ecossistema de negócios sociais e sustentabilidade.
@@ -380,9 +380,9 @@ const Sobre = () => {
             </div>
           </div>
           <div>
-            <p className="text-xs font-medium tracking-widest uppercase text-[#4a7c59] mb-3">Rede de apoio</p>
+            <p className="text-xs font-medium tracking-widest uppercase text-[#396824] mb-3">Rede de apoio</p>
             <h2 className="font-serif text-3xl md:text-4xl text-[#396824] mb-4">
-              Parcerias e <em className="text-[#4a7c59]">articulações</em>
+              Parcerias e <em className="text-[#396824]">articulações</em>
             </h2>
             <p className="text-[#5a6b5e] font-light text-sm leading-relaxed mb-8">
               A força do projeto está também em sua rede. A Saboaria Ecológica atua em articulação com instituições de ensino, organizações do terceiro setor, iniciativa privada e poder público, construindo pontes entre diferentes setores em prol de um objetivo comum: o desenvolvimento sustentável com equidade social.
@@ -391,7 +391,7 @@ const Sobre = () => {
               {parcerias.map((parceiro) => (
                 <span
                   key={parceiro}
-                  className="text-xs font-medium bg-[#f7f3ec] border border-[#4a7c59]/15 text-[#2d4f38] px-4 py-2 rounded-full"
+                  className="text-xs font-medium bg-[#f7f3ec] border border-[#396824]/15 text-[#2d4f38] px-4 py-2 rounded-full"
                 >
                   {parceiro}
                 </span>

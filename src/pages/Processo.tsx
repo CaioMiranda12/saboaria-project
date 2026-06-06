@@ -15,11 +15,12 @@ const numerosDoProcesso = [
 
 const Processo = () => {
   return (
-    <div className="bg-[#f7f3ec] text-[#1a2e1f]">
+    <div className="bg-creme text-[#1a2e1f]">
+
       {/* Hero */}
-      <section className="bg-[#396824] pt-24 md:pt-28 pb-16 md:pb-20 px-5 md:px-20 relative overflow-hidden">
+      <section className="bg-verde-principal pt-24 md:pt-28 pb-16 md:pb-20 px-5 md:px-20 relative overflow-hidden">
         <div className="absolute top-[-60px] right-[-60px] w-72 md:w-96 h-72 md:h-96 rounded-full bg-white/[0.04]" />
-        <div className='flex justify-between items-center'>
+        <div className="flex justify-between items-center">
           <div className="relative z-10 max-w-2xl">
             <span className="inline-flex items-center gap-2 bg-white/10 text-white/80 px-4 py-2 rounded-full text-xs font-medium uppercase tracking-widest mb-5 w-fit">
               Como produzimos
@@ -32,38 +33,36 @@ const Processo = () => {
               Cada produto nasce de um processo artesanal responsável, que transforma óleo saturado de fritura em limpeza eficaz e biodegradável, sem agredir o meio ambiente.
             </p>
           </div>
-
           <img
-            src={'/logo.png'}
+            src="/logo.png"
             alt="Saboaria Ecológica"
             className="max-w-100 w-1/2 h-full object-contain"
           />
-
-          <div></div>
+          <div />
         </div>
       </section>
 
       {/* Números */}
-      <div className="grid grid-cols-1 md:grid-cols-3 bg-white border-b border-[#4a7c59]/12">
+      <div className="grid grid-cols-1 md:grid-cols-3 bg-white border-b border-verde-principal/12">
         {numerosDoProcesso.map((item, i) => (
           <div
             key={item.valor}
             className={`py-8 md:py-10 text-center ${i < numerosDoProcesso.length - 1
-              ? 'border-b md:border-b-0 md:border-r border-[#4a7c59]/12'
+              ? 'border-b md:border-b-0 md:border-r border-verde-principal/12'
               : ''
               }`}
           >
-            <p className="font-serif text-3xl md:text-4xl font-bold text-[#4a7c59] mb-1">{item.valor}</p>
-            <p className="text-xs text-[#5a6b5e] font-light">{item.label}</p>
+            <p className="font-serif text-3xl md:text-4xl font-bold text-verde-principal mb-1">{item.valor}</p>
+            <p className="text-xs text-verde-muted font-light">{item.label}</p>
           </div>
         ))}
       </div>
 
       {/* Timeline de etapas */}
-      <section className="px-5 md:px-20 py-16 md:py-20 bg-[#f7f3ec]">
-        <p className="text-xs font-medium tracking-widest uppercase text-[#4a7c59] mb-2">Passo a passo</p>
-        <h2 className="font-serif text-3xl md:text-4xl text-[#396824] mb-10 md:mb-12 leading-tight">
-          As etapas do nosso <em className="text-[#4a7c59]">processo natural</em>
+      <section className="px-5 md:px-20 py-16 md:py-20 bg-creme">
+        <p className="text-xs font-medium tracking-widest uppercase text-verde-principal mb-2">Passo a passo</p>
+        <h2 className="font-serif text-3xl md:text-4xl text-verde-principal mb-10 md:mb-12 leading-tight">
+          As etapas do nosso <em className="text-verde-medio">processo natural</em>
         </h2>
         <div>
           {etapasDoProcessoNatural.map((etapa, i) => (
@@ -77,55 +76,55 @@ const Processo = () => {
       </section>
 
       {/* Princípios */}
-      <section className="px-5 md:px-20 py-16 md:py-20 bg-white border-t border-[#4a7c59]/10">
-        <p className="text-xs font-medium tracking-widest uppercase text-[#4a7c59] mb-2">Nossos princípios</p>
-        <h2 className="font-serif text-3xl md:text-4xl text-[#396824] mb-10 leading-tight">
-          O que guia cada <em className="text-[#4a7c59]">decisão de produção</em>
+      <section className="px-5 md:px-20 py-16 md:py-20 bg-white border-t border-verde-principal/10">
+        <p className="text-xs font-medium tracking-widest uppercase text-verde-principal mb-2">Nossos princípios</p>
+        <h2 className="font-serif text-3xl md:text-4xl text-verde-principal mb-10 leading-tight">
+          O que guia cada <em className="text-verde-medio">decisão de produção</em>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {principiosDeProducao.map((principio) => (
             <div
               key={principio.titulo}
-              className="p-5 md:p-7 rounded-2xl border border-[#4a7c59]/10 hover:border-[#4a7c59] hover:bg-[#e8f0e9] transition-all"
+              className="p-5 md:p-7 rounded-2xl border border-verde-principal/10 hover:border-verde-principal hover:bg-verde-claro transition-all"
             >
-              <div className="w-11 h-11 rounded-xl bg-[#e8f0e9] flex items-center justify-center mb-4">
-                <span className="w-2 h-2 rounded-full bg-[#4a7c59]" />
+              <div className="w-11 h-11 rounded-xl bg-verde-claro flex items-center justify-center mb-4">
+                <span className="w-2 h-2 rounded-full bg-verde-principal" />
               </div>
-              <h3 className="text-sm font-medium text-[#396824] mb-2">{principio.titulo}</h3>
-              <p className="text-xs text-[#5a6b5e] leading-relaxed font-light">{principio.texto}</p>
+              <h3 className="text-sm font-medium text-verde-principal mb-2">{principio.titulo}</h3>
+              <p className="text-xs text-verde-muted leading-relaxed font-light">{principio.texto}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Ingredientes */}
-      <section className="px-5 md:px-20 py-16 md:py-20 bg-[#f7f3ec] border-t border-[#4a7c59]/10">
+      <section className="px-5 md:px-20 py-16 md:py-20 bg-creme border-t border-verde-principal/10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div>
-            <p className="text-xs font-medium tracking-widest uppercase text-[#4a7c59] mb-2">Ingredientes</p>
-            <h2 className="font-serif text-3xl md:text-4xl text-[#396824] mb-3 leading-tight">
-              O que entra em cada <em className="text-[#4a7c59]">produto</em>
+            <p className="text-xs font-medium tracking-widest uppercase text-verde-principal mb-2">Ingredientes</p>
+            <h2 className="font-serif text-3xl md:text-4xl text-verde-principal mb-3 leading-tight">
+              O que entra em cada <em className="text-verde-medio">produto</em>
             </h2>
-            <p className="text-sm text-[#5a6b5e] font-light leading-relaxed mb-6">
+            <p className="text-sm text-verde-muted font-light leading-relaxed mb-6">
               Ingredientes simples, naturais e biodegradáveis. Nada supérfluo, tudo com propósito.
             </p>
             <div className="flex flex-col gap-3">
               {ingredientesDosProdutos.map((ing) => (
                 <div
                   key={ing.nome}
-                  className="flex items-center gap-4 bg-white px-4 py-3 rounded-xl border border-[#4a7c59]/10"
+                  className="flex items-center gap-4 bg-white px-4 py-3 rounded-xl border border-verde-principal/10"
                 >
-                  <span className="w-2 h-2 rounded-full bg-[#4a7c59] flex-shrink-0" />
+                  <span className="w-2 h-2 rounded-full bg-verde-principal flex-shrink-0" />
                   <div>
-                    <p className="text-sm font-medium text-[#396824]">{ing.nome}</p>
-                    <p className="text-xs text-[#5a6b5e] font-light">{ing.descricao}</p>
+                    <p className="text-sm font-medium text-verde-principal">{ing.nome}</p>
+                    <p className="text-xs text-verde-muted font-light">{ing.descricao}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="bg-[#4a7c59] rounded-3xl p-8 md:p-12 flex flex-col gap-4">
+          <div className="bg-verde-principal rounded-3xl p-8 md:p-12 flex flex-col gap-4">
             {[
               { valor: '25mil L', label: 'de água preservados por litro de óleo reutilizado' },
               { valor: '100%', label: 'dos ingredientes são biodegradáveis' },
@@ -144,7 +143,7 @@ const Processo = () => {
       </section>
 
       {/* CTA */}
-      <section className="px-5 md:px-20 py-16 md:py-20 bg-[#396824] flex flex-col items-center text-center">
+      <section className="px-5 md:px-20 py-16 md:py-20 bg-verde-principal flex flex-col items-center text-center">
         <h2 className="font-serif text-3xl md:text-4xl text-white mb-3">
           Conheça os <em className="text-white/45">produtos</em>
         </h2>
@@ -154,7 +153,7 @@ const Processo = () => {
         <div className="flex flex-col sm:flex-row gap-3">
           <Link
             to="/produtos"
-            className="bg-white text-[#396824] px-8 py-3 rounded-full text-sm font-medium hover:opacity-90 transition-opacity text-center"
+            className="bg-white text-verde-principal px-8 py-3 rounded-full text-sm font-medium hover:bg-verde-claro transition-colors text-center"
           >
             Ver produtos
           </Link>
@@ -162,12 +161,13 @@ const Processo = () => {
             href={`https://wa.me/${contatosDaMarca.whatsapp}`}
             target="_blank"
             rel="noreferrer"
-            className="border border-white/30 text-white px-8 py-3 rounded-full text-sm font-light hover:border-white transition-colors text-center"
+            className="border border-white/30 text-white px-8 py-3 rounded-full text-sm font-light hover:border-white hover:bg-white/10 transition-colors text-center"
           >
             Falar pelo WhatsApp
           </a>
         </div>
       </section>
+
     </div>
   )
 }

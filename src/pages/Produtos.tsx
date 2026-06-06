@@ -27,15 +27,15 @@ const Produtos = () => {
     encodeURIComponent(`Olá! Tenho interesse no produto *${produto.nomePrincipal}*. Pode me ajudar?`)
 
   return (
-    <div className="bg-[#f7f3ec] text-[#1a2e1f]">
+    <div className="bg-creme text-[#1a2e1f]">
 
       {/* Hero */}
-      <section className="bg-[#013e72] pt-28 pb-16 px-6 md:px-20 relative overflow-hidden">
+      <section className="bg-azul-principal pt-28 pb-16 px-6 md:px-20 relative overflow-hidden">
         <div className="absolute top-[-80px] right-[-80px] w-96 h-96 rounded-full bg-white/[0.04]" />
-        <div className='flex justify-between'>
+        <div className="flex justify-between">
           <div className="relative z-10 max-w-xl">
             <span className="inline-flex items-center gap-2 bg-white/10 text-white/80 px-4 py-2 rounded-full text-xs font-medium uppercase tracking-widest mb-6 w-fit">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#013e72]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-azul-medio" />
               Produtos artesanais
             </span>
             <h1 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-5">
@@ -45,39 +45,36 @@ const Produtos = () => {
               Todos os nossos produtos são feitos à mão com óleo reutilizado, ingredientes naturais e embalagens biodegradáveis.
             </p>
           </div>
-
-          <div className='flex flex-col items-center lg:flex-row'>
+          <div className="flex flex-col items-center lg:flex-row">
             <img
-              src={'/logo.png'}
+              src="/logo.png"
               alt="Saboaria Ecológica"
               className="max-w-100 w-full md:w-1/2 h-full object-contain"
             />
-
             <img
-              src={'/logo-ellas.png'}
+              src="/logo-ellas.png"
               alt="Saboaria Ecológica"
               className="max-w-125 w-full md:w-1/2 h-full object-contain"
             />
-
           </div>
         </div>
       </section>
 
       {/* Filtros */}
-      <div className="sticky top-16 z-40 bg-white border-b border-[#013e72]/10 px-6 md:px-20 py-4 flex gap-2 flex-wrap">
+      <div className="sticky top-16 z-40 bg-white border-b border-azul-principal/10 px-6 md:px-20 py-4 flex gap-2 flex-wrap">
         {filtros.map(({ valor, label }) => (
           <button
             key={valor}
             onClick={() => setFiltroAtivo(valor)}
             className={`px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider transition-all ${filtroAtivo === valor
-              ? 'bg-[#013e72] text-white'
-              : 'border border-[#013e72]/20 text-[#5a6b5e] hover:border-[#013e72] hover:text-[#013e72]'
+                ? 'bg-azul-principal text-white'
+                : 'border border-azul-principal/20 text-azul-muted hover:border-azul-principal hover:text-azul-principal'
               }`}
           >
             {label}
           </button>
         ))}
-        <span className="ml-auto self-center text-xs text-[#5a6b5e] font-light">
+        <span className="ml-auto self-center text-xs text-azul-muted font-light">
           {produtosFiltrados.length} produto{produtosFiltrados.length !== 1 ? 's' : ''}
         </span>
       </div>
@@ -85,7 +82,7 @@ const Produtos = () => {
       {/* Grid */}
       <section className="px-6 md:px-20 py-12 md:py-16">
         {produtosFiltrados.length === 0 ? (
-          <div className="text-center py-24 text-[#5a6b5e] text-sm font-light">
+          <div className="text-center py-24 text-azul-muted text-sm font-light">
             Nenhum produto encontrado para esse filtro.
           </div>
         ) : (
@@ -104,11 +101,11 @@ const Produtos = () => {
       {/* Modal */}
       {produtoSelecionado && (
         <div
-          className="fixed inset-0 z-50 bg-[#013e72]/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-6"
+          className="fixed inset-0 z-50 bg-azul-principal/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-6"
           onClick={() => setProdutoSelecionado(null)}
         >
           <div
-            className="bg-[#f7f3ec] w-full sm:max-w-xl rounded-t-3xl sm:rounded-3xl p-6 md:p-8 max-h-[90vh] overflow-y-auto"
+            className="bg-creme w-full sm:max-w-xl rounded-t-3xl sm:rounded-3xl p-6 md:p-8 max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header do modal */}
@@ -118,24 +115,24 @@ const Produtos = () => {
                   {produtoSelecionado.tipos?.map((tipo) => (
                     <span
                       key={tipo}
-                      className="bg-[#e8f0e9] text-[#013e72] text-[10px] font-medium px-3 py-1 rounded-full uppercase tracking-wider"
+                      className="bg-azul-claro text-azul-principal text-[10px] font-medium px-3 py-1 rounded-full uppercase tracking-wider"
                     >
                       {tipo}
                     </span>
                   ))}
                 </div>
-                <h2 className="font-serif text-2xl md:text-3xl text-[#013e72]">
+                <h2 className="font-serif text-2xl md:text-3xl text-azul-principal">
                   {produtoSelecionado.nomePrincipal}
                 </h2>
                 {produtoSelecionado.nomeComplemento && (
-                  <p className="text-sm text-[#5a6b5e] font-light italic mt-1">
+                  <p className="text-sm text-azul-muted font-light italic mt-1">
                     {produtoSelecionado.nomeComplemento}
                   </p>
                 )}
               </div>
               <button
                 onClick={() => setProdutoSelecionado(null)}
-                className="w-9 h-9 rounded-full bg-white border border-[#013e72]/15 flex items-center justify-center text-[#5a6b5e] hover:border-[#013e72] transition-colors shrink-0 ml-4"
+                className="w-9 h-9 rounded-full bg-white border border-azul-principal/15 flex items-center justify-center text-azul-muted hover:border-azul-principal transition-colors shrink-0 ml-4"
               >
                 <X size={16} />
               </button>
@@ -144,47 +141,45 @@ const Produtos = () => {
             {/* Blocos de info */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
               {produtoSelecionado.ingredientes && (
-                <div className="bg-white rounded-2xl p-4 border border-[#013e72]/10">
-                  <p className="text-[10px] font-medium uppercase tracking-widest text-[#013e72] mb-2">Ingredientes</p>
-                  <p className="text-xs text-[#5a6b5e] font-light leading-relaxed">{produtoSelecionado.ingredientes}</p>
+                <div className="bg-white rounded-2xl p-4 border border-azul-principal/10">
+                  <p className="text-[10px] font-medium uppercase tracking-widest text-azul-principal mb-2">Ingredientes</p>
+                  <p className="text-xs text-azul-muted font-light leading-relaxed">{produtoSelecionado.ingredientes}</p>
                 </div>
               )}
               {produtoSelecionado.modoDeUso && (
-                <div className="bg-white rounded-2xl p-4 border border-[#013e72]/10">
-                  <p className="text-[10px] font-medium uppercase tracking-widest text-[#013e72] mb-2">Modo de uso</p>
-                  <p className="text-xs text-[#5a6b5e] font-light leading-relaxed">{produtoSelecionado.modoDeUso}</p>
+                <div className="bg-white rounded-2xl p-4 border border-azul-principal/10">
+                  <p className="text-[10px] font-medium uppercase tracking-widest text-azul-principal mb-2">Modo de uso</p>
+                  <p className="text-xs text-azul-muted font-light leading-relaxed">{produtoSelecionado.modoDeUso}</p>
                 </div>
               )}
               {produtoSelecionado.descricaoCompleta && (
-                <div className="bg-white rounded-2xl p-4 border border-[#013e72]/10 sm:col-span-2">
-                  <p className="text-[10px] font-medium uppercase tracking-widest text-[#013e72] mb-2">Descrição completa</p>
-                  <p className="text-xs text-[#5a6b5e] font-light leading-relaxed">{produtoSelecionado.descricaoCompleta}</p>
+                <div className="bg-white rounded-2xl p-4 border border-azul-principal/10 sm:col-span-2">
+                  <p className="text-[10px] font-medium uppercase tracking-widest text-azul-principal mb-2">Descrição completa</p>
+                  <p className="text-xs text-azul-muted font-light leading-relaxed">{produtoSelecionado.descricaoCompleta}</p>
                 </div>
               )}
             </div>
 
-            {/* Preço e ações */}
+            {/* Peso */}
             <div className="flex justify-between items-center mb-5">
-              {/* <span className="font-serif text-3xl font-bold text-[#013e72]">
-                R$ {produtoSelecionado.preco}
-              </span> */}
               {produtoSelecionado.peso && (
-                <span className="text-xs text-[#5a6b5e] font-light">{produtoSelecionado.peso}</span>
+                <span className="text-xs text-azul-muted font-light">{produtoSelecionado.peso}</span>
               )}
             </div>
 
+            {/* Ações */}
             <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href={`https://wa.me/${contatosDaMarca.whatsapp}?text=${mensagemWhatsApp(produtoSelecionado)}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex-1 bg-[#013e72] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#012b50] transition-colors text-center"
+                className="flex-1 bg-azul-principal text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-azul-escuro transition-colors text-center"
               >
                 Pedir pelo WhatsApp
               </a>
               <button
                 onClick={() => setProdutoSelecionado(null)}
-                className="flex-1 border border-[#013e72]/25 text-[#5a6b5e] px-6 py-3 rounded-full text-sm font-light hover:border-[#013e72] transition-colors"
+                className="flex-1 border border-azul-principal/25 text-azul-muted px-6 py-3 rounded-full text-sm font-light hover:border-azul-principal transition-colors"
               >
                 Fechar
               </button>
@@ -192,6 +187,7 @@ const Produtos = () => {
           </div>
         </div>
       )}
+
     </div>
   )
 }

@@ -1,23 +1,5 @@
 import { contatosDaMarca } from '../data/marca'
 
-// const schemaFormularioContato = z.object({
-//   nomeCompleto: z.string().min(3, 'Informe seu nome completo'),
-//   email: z.string().email('E-mail inválido'),
-//   telefone: z.string().min(10, 'Informe um telefone válido'),
-//   assunto: z.string().min(1, 'Selecione um assunto'),
-//   mensagem: z.string().min(20, 'Mensagem deve ter pelo menos 20 caracteres'),
-// })
-
-// type DadosDoFormulario = z.infer<typeof schemaFormularioContato>
-
-// const opcoesDeAssunto = [
-//   'Pedido de produtos',
-//   'Dúvida sobre produtos',
-//   'Parceria comercial',
-//   'Doação de óleo',
-//   'Outro',
-// ]
-
 const canaisDeContato = [
   {
     nome: 'WhatsApp',
@@ -73,33 +55,14 @@ const horarioDeAtendimento = [
   { dia: 'Sábado e Domingo', hora: 'Fechado' },
 ]
 
-// const campoBaseClasse =
-//   'w-full bg-white border border-[#4a7c59]/20 rounded-xl px-4 py-3 text-sm text-[#1a2e1f] font-light outline-none focus:border-[#4a7c59] transition-colors'
-
 const Contato = () => {
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   reset,
-  //   formState: { errors, isSubmitting },
-  // } = useForm<DadosDoFormulario>({
-  //   resolver: zodResolver(schemaFormularioContato),
-  // })
-
-  // const aoEnviarFormulario = async (dados: DadosDoFormulario) => {
-  //   // Aqui você conecta ao backend ou serviço de e-mail futuramente
-  //   console.log(dados)
-  //   await new Promise((resolve) => setTimeout(resolve, 800))
-  //   toast.success('Mensagem enviada com sucesso! Retornaremos em breve.')
-  //   reset()
-  // }
-
   return (
-    <div className="bg-[#f7f3ec] text-[#1a2e1f]">
+    <div className="bg-creme text-[#1a2e1f]">
+
       {/* Hero */}
-      <section className="bg-[#396824] pt-24 md:pt-28 pb-16 md:pb-20 px-5 md:px-20 relative overflow-hidden ">
+      <section className="bg-verde-principal pt-24 md:pt-28 pb-16 md:pb-20 px-5 md:px-20 relative overflow-hidden">
         <div className="absolute top-[-80px] right-[-80px] w-72 md:w-96 h-72 md:h-96 rounded-full bg-white/[0.04]" />
-        <div className='flex justify-between items-center'>
+        <div className="flex justify-between items-center">
           <div className="relative z-10 max-w-xl">
             <span className="inline-flex items-center gap-2 bg-white/10 text-white/80 px-4 py-2 rounded-full text-xs font-medium uppercase tracking-widest mb-5 w-fit">
               Fale com a gente
@@ -111,137 +74,48 @@ const Contato = () => {
               Tire suas dúvidas, faça seu pedido ou saiba como contribuir com a nossa causa. Estamos prontos para te atender pelos canais abaixo.
             </p>
           </div>
-
           <img
-            src={'/logo.png'}
+            src="/logo.png"
             alt="Saboaria Ecológica"
             className="max-w-100 w-1/2 h-full object-contain"
           />
-
-          <div></div>
+          <div />
         </div>
       </section>
 
       {/* Canais rápidos */}
-      <div className="grid grid-cols-2 md:grid-cols-4 bg-white border-b border-[#4a7c59]/10">
+      <div className="grid grid-cols-2 md:grid-cols-4 bg-white border-b border-verde-medio/10">
         {canaisDeContato.map((canal, i) => (
           <a
             key={canal.nome}
             href={canal.href}
             target="_blank"
             rel="noreferrer"
-            className={`flex flex-col items-center text-center px-4 py-6 md:py-8 hover:bg-[#e8f0e9] transition-colors no-underline
-              ${i % 2 === 0 ? 'border-r border-[#4a7c59]/10' : ''}
-              ${i < 2 ? 'border-b md:border-b-0 border-[#4a7c59]/10' : ''}
+            className={`flex flex-col items-center text-center px-4 py-6 md:py-8 hover:bg-verde-claro transition-colors no-underline
+              ${i % 2 === 0 ? 'border-r border-verde-medio/10' : ''}
+              ${i < 2 ? 'border-b md:border-b-0 border-verde-medio/10' : ''}
               md:border-r md:last:border-r-0 md:border-b-0`}
           >
-            <div className="w-12 h-12 rounded-full bg-[#e8f0e9] flex items-center justify-center mb-3">
+            <div className="w-12 h-12 rounded-full bg-verde-claro flex items-center justify-center mb-3">
               {canal.icone}
             </div>
-            <p className="text-xs font-medium text-[#396824] mb-1">{canal.nome}</p>
-            <p className="text-xs text-[#5a6b5e] font-light">{canal.valor}</p>
+            <p className="text-xs font-medium text-verde-principal mb-1">{canal.nome}</p>
+            <p className="text-xs text-verde-muted font-light">{canal.valor}</p>
           </a>
         ))}
       </div>
 
-      {/* Formulário + Info lateral */}
-      <div className="grid grid-cols-1 md:grid-cols-2 border-t border-[#4a7c59]/10">
-        <div className='flex justify-center items-center'>
+      {/* Logo + Info lateral */}
+      <div className="grid grid-cols-1 md:grid-cols-2 border-t border-verde-medio/10">
+        <div className="flex justify-center items-center">
           <img
-            src='/logo-2.png'
+            src="/logo-2.png"
             alt="Logo da Saboaria Ecológica"
           />
         </div>
 
-        {/* Formulário */}
-        {/* <div className="px-5 md:px-16 py-14 md:py-20 bg-[#f7f3ec]">
-          <p className="text-xs font-medium tracking-widest uppercase text-[#4a7c59] mb-2">Formulário</p>
-          <h2 className="font-serif text-3xl md:text-4xl text-[#396824] mb-2 leading-tight">
-            Envie uma <em className="text-[#4a7c59]">mensagem</em>
-          </h2>
-          <p className="text-sm text-[#5a6b5e] font-light leading-relaxed mb-8">
-            Preencha o formulário e retornaremos em breve pelo canal de sua preferência.
-          </p>
-
-          <form onSubmit={handleSubmit(aoEnviarFormulario)} className="flex flex-col gap-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-medium text-[#396824] mb-1.5">Nome completo</label>
-                <input
-                  {...register('nomeCompleto')}
-                  type="text"
-                  placeholder="Seu nome"
-                  className={campoBaseClasse}
-                />
-                {errors.nomeCompleto && (
-                  <p className="text-xs text-red-500 mt-1">{errors.nomeCompleto.message}</p>
-                )}
-              </div>
-              <div>
-                <label className="block text-xs font-medium text-[#396824] mb-1.5">E-mail</label>
-                <input
-                  {...register('email')}
-                  type="email"
-                  placeholder="seu@email.com"
-                  className={campoBaseClasse}
-                />
-                {errors.email && (
-                  <p className="text-xs text-red-500 mt-1">{errors.email.message}</p>
-                )}
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-xs font-medium text-[#396824] mb-1.5">Telefone / WhatsApp</label>
-              <input
-                {...register('telefone')}
-                type="tel"
-                placeholder="(85) 99999-9999"
-                className={campoBaseClasse}
-              />
-              {errors.telefone && (
-                <p className="text-xs text-red-500 mt-1">{errors.telefone.message}</p>
-              )}
-            </div>
-
-            <div>
-              <label className="block text-xs font-medium text-[#396824] mb-1.5">Assunto</label>
-              <select {...register('assunto')} className={campoBaseClasse}>
-                <option value="">Selecione um assunto</option>
-                {opcoesDeAssunto.map((opcao) => (
-                  <option key={opcao} value={opcao}>{opcao}</option>
-                ))}
-              </select>
-              {errors.assunto && (
-                <p className="text-xs text-red-500 mt-1">{errors.assunto.message}</p>
-              )}
-            </div>
-
-            <div>
-              <label className="block text-xs font-medium text-[#396824] mb-1.5">Mensagem</label>
-              <textarea
-                {...register('mensagem')}
-                placeholder="Escreva sua mensagem aqui..."
-                rows={5}
-                className={campoBaseClasse}
-              />
-              {errors.mensagem && (
-                <p className="text-xs text-red-500 mt-1">{errors.mensagem.message}</p>
-              )}
-            </div>
-
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-[#4a7c59] text-white rounded-full py-3.5 text-sm font-medium hover:bg-[#396824] transition-colors disabled:opacity-60 disabled:cursor-not-allowed mt-1"
-            >
-              {isSubmitting ? 'Enviando...' : 'Enviar mensagem'}
-            </button>
-          </form>
-        </div> */}
-
         {/* Info lateral */}
-        <div className="bg-[#396824] px-5 md:px-14 py-14 md:py-20 flex flex-col gap-6">
+        <div className="bg-verde-principal px-5 md:px-14 py-14 md:py-20 flex flex-col gap-6">
           <div>
             <h3 className="font-serif text-2xl text-white mb-2">Canais de atendimento</h3>
             <p className="text-white/60 text-sm font-light leading-relaxed mb-5">
@@ -304,6 +178,7 @@ const Contato = () => {
           </div>
         </div>
       </div>
+
     </div>
   )
 }
