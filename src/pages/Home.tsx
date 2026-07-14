@@ -52,13 +52,6 @@ const Home = () => {
         <div className="relative bg-verde-principal flex items-center justify-center overflow-hidden min-h-64 md:min-h-0">
           <div className="absolute inset-0 opacity-5 bg-[repeating-linear-gradient(45deg,#fff,#fff_1px,transparent_1px,transparent_30px)]" />
           <img src='/logo.png' alt="Saboaria Ecológica" />
-          <div className="absolute bottom-8 left-8 bg-white/95 rounded-2xl px-4 py-3 flex items-center gap-3">
-            <span className="w-2.5 h-2.5 rounded-full bg-verde-medio" />
-            <div>
-              <p className="text-xs font-medium text-verde-principal">100% Biodegradável</p>
-              <p className="text-xs text-verde-muted font-light">Feito com óleo reutilizado</p>
-            </div>
-          </div>
         </div>
       </section>
 
